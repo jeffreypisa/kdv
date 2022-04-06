@@ -1,0 +1,124 @@
+.mod-aanpak {
+	padding-bottom: 0;
+	.wrap {
+		position: relative;
+		.content {
+			position: relative;
+			z-index: 3;
+		}
+		.dots {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			padding-top: 70%;
+			z-index: 2;
+			&:before {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				padding-top: 70%;
+				content: '';
+				background-size: 100%;
+				background-repeat: no-repeat;
+				background-position: bottom center;
+				z-index: 1;
+				background-image: url(../img/curved_shape.svg);
+			}
+			.dot {
+				height: 30px;
+				width: 30px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				background: $greenlight;
+				border-radius: 100px;
+				z-index: 2;
+				&.dot-1 {
+					left: 42%;
+					top: 78%;
+				}
+				&.dot-2 {
+					left: 62%;
+					top: 49%;
+				}
+				&.dot-3 {
+					left: 80%;
+					top: 10%;
+				}
+			}
+		}
+		.image-holder {
+			position: relative;
+			padding-top: 70%;
+			overflow: hidden;
+			.image {
+				z-index: 0;
+			}
+		}
+	}
+}
+
+
+
+@include media-breakpoint-up(md) {
+	.mod-aanpak {
+		.wrap {
+			.dots {
+				.dot {
+					margin: 8px;
+					width: 30px;
+					height: 30px;
+				}
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.mod-aanpak {
+		.wrap {
+			position: relative;
+			padding-top: 30px;
+			padding-bottom: 160px;
+			min-height: 630px;
+			.space-right {
+				padding-right: 60px;
+			}
+			.dots {
+				top: 0;
+				padding: 0;
+				&:before {
+					top: 0;
+					padding: 0;
+				}
+				.dot {
+					margin: 0;
+					width: 50px;
+					height: 50px;
+				}
+			}
+			.image-holder {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				width: calc(50% - 15px);
+				padding: 0;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	.mod-aanpak {
+		.wrap {
+			.dots {
+				.dot {
+					margin: 3px;
+				}
+			}
+		}
+	}
+}

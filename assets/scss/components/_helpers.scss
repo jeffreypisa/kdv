@@ -1,0 +1,64 @@
+.mb-30 {
+	margin-bottom: 30px;
+}
+
+.bg-cover {
+	background-size: cover;
+	background-position: center center;
+}
+
+.bg-contain {
+	background-size: contain;
+	background-position: center center;
+}
+
+.fill-space {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	.bg-cover {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+}
+
+.ratio-3x4 {
+	padding-top: 150%;
+}
+
+.ratio-4x3 {
+	padding-top: 75%;
+}
+
+.ratio-16x9 {
+	padding-top: 57%;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.g-6 {
+	--bs-gutter-x: 8rem;
+}
+	
+@include media-breakpoint-up(xl) {
+	.g-lg-6 {
+		--bs-gutter-x: 6rem;
+	}
+}
+	
+@include media-breakpoint-up(xxl) {
+	.g-lg-6 {
+		--bs-gutter-x: 8rem;
+	}
+}

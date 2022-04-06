@@ -1,0 +1,9 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+		{% include 'partial/contact1_toegang.twig' %}
+		{% include 'partial/contact2_meemcontactop.twig' %}
+		{% include 'partial/contact3_quote.twig' %}
+	</article>
+{% endblock %}

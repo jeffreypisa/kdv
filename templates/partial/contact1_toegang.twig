@@ -1,0 +1,50 @@
+<section id="toegang" class="mod-toegang" data-scroll-section>
+	<div class="container-fluid anime-fadein">
+		<div class="row g-6 mb-5">
+			<div class="col-lg-8 offset-lg-2 text-center">
+				{% if post.toegang_titel %}
+					<h2 class="">{{ post.toegang_titel }}</h2>
+				{% endif %}
+				<div class="row">
+					<div class="col-10 offset-1 col-lg-8 offset-lg-2">
+						{% if post.toegang_afbeelding %}
+							<img src="{{ Image(post.toegang_afbeelding).src }}" class="w-100 h-auto mb-4">	
+						{% endif %}
+					</div>
+				</div>
+				{% if post.toegang_link %}
+					<a class="circle d-none d-lg-flex align-items-center" href="{{ post.toegang_link.url }}" target="{{ post.toegang_link.target }}">
+						<div class="w-100">
+							<h3 class="mb-1"> {{ post.toegang_link.title }} </h3>
+							<span>klik hier</span>
+						</div>
+					</a>
+				{% endif %}
+			</div>
+		</div>
+			
+		<div class="row g-5 g-xl-6">
+			{% for item in post.get_field('toegang_usp') %}
+				<div class="col-md-6 col-xl-3">
+					<div class="mb-5 text-center">
+						<div data-mh>
+							<div class="icon d-inline-block">
+								<img src="{{ Image(item.afbeelding).src }}" class="mb-5">
+							</div>
+							{% if item.titel %}
+								<h2 class="h3 text-green">{{ item.titel }}</h2>
+							{% endif %}
+							<div data-mh>
+								{{ item.tekst }}
+							</div>
+							{% if item.link %}
+								<br>
+								<a class="btn btn-primary" href="{{ item.link.url }}" target="{{ item.link.target }}">{{ item.link.title }}</a>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>

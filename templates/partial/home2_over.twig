@@ -1,0 +1,29 @@
+<section id="waaromkorral" class="mod-content waves-grey" data-scroll-section>
+	<div class="container-fluid">
+		<div class="row g-6">
+			<div class="col-lg-6 mb-5 mb-lg-0 anime-fadein">
+				{% if post.over_titel %}
+					<h2 class="text-green h3">{{ post.over_titel }}</h2>
+				{% endif %}
+				{% if post.over_tekst %}
+					{{ post.get_field('over_tekst') }}
+				{% endif %}
+				{% if post.over_link %}
+					<br>
+					<a class="btn btn-primary" href="{{ post.over_link.url }}" target="{{ post.over_link.target }}">{{ post.over_link.title }}</a>
+				{% endif %}
+			</div>
+			<div class="col-lg-6 anime-fadein">
+				{% if post.over_afbeelding %}
+					<img src="{{ Image(post.over_afbeelding).src }}" class="w-100 mb-5 h-auto" data-lity>
+				{% endif %}
+				{% if post.over_titel_2 %}
+					<h2 class="h3 text-green ">{{ post.over_titel_2 }}</h2>
+				{% endif %}
+				{% if post.over_tekst_2 %}
+					{{ post.get_field('over_tekst_2') }}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</section>

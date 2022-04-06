@@ -1,0 +1,40 @@
+<section id="section{{ sectionno }}" class="mod-banner {% if item.xl %}xl{% endif %} d-flex align-items-center text-white">
+	<div class="fill-space" data-rellax-speed="-3">
+		<div class="bg-cover" style="background-image: url({{ Image(item.afbeelding).src|resize(1920) }})" >
+		</div>
+	</div>
+	<div class="content w-100">
+		<div class="container">
+			{% if item.xl %}
+				<div class="row">
+					<div class="col-lg-10">
+						<h2 class="h1 altfont">
+							{% if item.titel %}
+								{{ item.titel }} 
+							{% else %}
+								{{ post.title }} 
+							{% endif %}
+						</h2>
+						{% if item.tekst %}
+							<p> {{ item.tekst }} </p>
+						{% endif %}
+					</div>
+				</div>
+			{% else %}
+				<div class="row">
+					<div class="col-10 offset-1 col-lg-8 offset-lg-2">
+						<div class="text-center">
+							<h2 class="altfont">
+								{% if item.titel %}
+									{{ item.titel }} 
+								{% else %}
+									{{ post.title }} 
+								{% endif %}
+							</h2>
+						</div>			
+					</div>
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</section> 

@@ -1,0 +1,17 @@
+.lity {
+	background: #fff;
+}
+.lity-close {
+	text-shadow: none;
+	color: $blue;
+	font-size: 32px;
+	top: 10px;
+	right: 10px;
+	&:hover {
+		text-shadow: none;
+		color: $orange;
+	}
+}
+.lity-content:after {
+	box-shadow: none;	
+}

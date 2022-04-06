@@ -1,0 +1,224 @@
+body .nf-form-content button, 
+body .nf-form-content input[type=button], 
+body .nf-form-content input[type=submit] {
+	@extend .btn;
+	@extend .btn-primary;
+	height: auto;
+}
+
+body .nf-form-content .list-select-wrap .nf-field-element>div, 
+body .nf-form-content input:not([type=button]), 
+body .nf-form-content textarea {
+	background: #fff;
+	border-color: #fff;
+	border-radius: 8px;
+	&::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+		color: #9DC5C3;
+		opacity: 1; /* Firefox */
+	}
+	
+	&:-ms-input-placeholder { /* Internet Explorer 10-11 */
+		color: #9DC5C3;
+	}
+	
+	&::-ms-input-placeholder { /* Microsoft Edge */
+		color: #9DC5C3;
+	}
+}
+
+body .nf-form-content .field-wrap:not(.checkbox-wrap) .nf-field-label {
+	display: none;
+}
+
+body .nf-form-content label {
+	font-size: 14px;
+	line-height: 16px;
+	font-weight: 400; 
+	color: $dark;
+} 
+
+body .nf-form-content .listcheckbox-wrap li, .nf-form-content .listradio-wrap li {
+	display: inline-block;
+}
+
+body .listradio-wrap .nf-field-element label.nf-checked-label:before {
+	background: $blue;
+}
+
+body .checkbox-wrap {
+	min-height: 40px;
+}
+
+body .listradio-wrap .nf-field-element label:after {
+	border: 8px solid #fff;	
+	background: #fff;
+	width: 30px;
+	height: 30px;
+}
+body .listradio-wrap .nf-field-element label.nf-checked-label:after {
+	border-color: #fff;
+	background: $blue;
+}
+
+body {
+	.list-checkbox-wrap .nf-field-element li label, .list-image-wrap .nf-field-element li label, .list-radio-wrap .nf-field-element li label {
+		padding: 6px 10px;
+	}
+}
+
+body {
+	.listradio-wrap .nf-field-element label.nf-checked-label:before {
+		display: none;
+	}
+}
+.checkbox-container.label-right label {
+	padding-top: 11px;
+	padding-bottom: 13px;
+	padding-left: 36px;
+	line-height: 26px;
+}
+
+.checkbox-wrap .nf-field-element label.nf-checked-label:after, 
+.checkbox-wrap .nf-field-label label.nf-checked-label:after, 
+.listcheckbox-wrap .nf-field-element label.nf-checked-label:after, 
+.listcheckbox-wrap .nf-field-label label.nf-checked-label:after {
+	height: 50px;
+	width: 50px;
+	left: -30px;
+	border-radius: 8px;
+	border: 0;
+}
+
+body .checkbox-wrap .nf-field-element label:after, 
+body .checkbox-wrap .nf-field-label label:after, 
+body .listcheckbox-wrap .nf-field-element label:after, 
+body .listcheckbox-wrap .nf-field-label label:after {
+	width: 50px;
+	height: 50px;
+	left: -30px;
+	border: 0;
+	border-radius: 8px;
+}
+
+body .checkbox-wrap .nf-field-element label:before, 
+body .checkbox-wrap .nf-field-label label:before, 
+body .listcheckbox-wrap .nf-field-element label:before, 
+body .listcheckbox-wrap .nf-field-label label:before {
+	background: url('../img/check_blue.svg');
+	background-repeat: no-repeat;
+	background-size: 20px;
+	background-position: center;
+	content: '';
+	height: 50px;
+	width: 50px;
+	opacity: 0;
+}
+
+body {
+	.label-right .nf-field-label {
+		align-items: inherit;
+	}
+}
+
+body .nf-form-content label {
+	color: #fff;
+	font-weight: 700;
+	font-size: 18px;
+}
+
+body .checkbox-wrap .nf-field-element label.nf-checked-label:before, 
+body .checkbox-wrap .nf-field-label label.nf-checked-label:before, 
+body .listcheckbox-wrap .nf-field-element label.nf-checked-label:before, 
+body .listcheckbox-wrap .nf-field-label label.nf-checked-label:before {
+	opacity: 1;
+}
+
+.submit-wrap {
+	.nf-field-element {
+		display: inline-block;
+		width: auto !important;
+		position: relative;
+		transition: .2s $ease;
+		&:after {
+			content: "";
+			position: absolute;
+			left: calc(100% - 26px);
+			top: 0;
+			height: 48px;
+			width: 42px;
+			background-image: url(../img/button_orange.svg);
+			background-size: 42px;
+			background-repeat: no-repeat;
+		}
+		input[type=button] {
+			&:hover {
+				transform: scale(1);
+				opacity: 1;
+			}
+		}
+		&:hover {
+			opacity: 0.8;
+			transform: scale(1.1);
+		}
+	}
+}
+
+.form-select-holder {
+	position: relative;
+	.form-select {
+		padding-right: 50px;
+	}
+	&:after {
+		position: absolute;
+		right: 20px;
+		top: 10px;
+		display: inline-block;
+		font-style: normal;
+		font-variant: normal;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		font-family: "Font Awesome 5";
+		font-weight: 700;
+		content: "\f078";
+		font-size: 16px;
+		transition: 0.4s $ease;
+		margin-left: 8px;
+		pointer-events: none;
+		color: $green;
+	}
+	&:hover {
+		&:after {
+			color: #fff;
+		}
+	}
+}
+.form-select {
+	@extend .btn;
+	@extend .btn-outline-primary;
+	width: auto;
+	background-repeat: no-repeat;
+	background-image: url('../img/arrow.svg');
+	background-size: 18px 18px;
+	background-position: right 20px center;
+	&:hover, &:focus {
+		background-repeat: no-repeat;
+		background-image: url('../img/arrow.svg');
+		background-size: 18px 18px;
+		background-position: right 20px center;
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	.submit-wrap {
+		.nf-field-element {
+			&:after {
+				left: calc(100% - 70px);
+				height: 64px;
+				width: 55px;
+				background-image: url(../img/button_orange.svg);
+				background-size: 56px;
+				background-repeat: no-repeat;
+			}
+		}
+	}
+}

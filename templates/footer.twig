@@ -1,0 +1,28 @@
+<footer id="footer" class="section bg-greylight" data-scroll-section>
+    <div class="container">
+        <div class="row">
+            <div class="order-last order-md-first col-lg-4">
+                <img src="{{ theme.link }}/assets/img/logo_kdv.svg" width="132" height="132" class="mb-30">
+                {{ options.footer_adres }}
+            </div>
+            <div class="col-md-6 col-lg-4">
+                {% if options.footer_nieuwsbrief_titel %}
+                    <h4> {{ options.footer_nieuwsbrief_titel }} </h4>
+                {% endif %}
+                {{ options.footer_nieuwsbrief_tekst }}
+            </div>
+            <div class="col-md-6 col-lg-4">
+                {% if options.footer_over_titel %}
+                    <h4> {{ options.footer_over_titel }} </h4>
+                {% endif %}
+                {{ options.footer_over_tekst }}
+                <br>
+                {% if options.footer_over_link %}
+                    <a href="{{ options.footer_over_link.url }}" target="{{ options.footer_over_link.target }}" class="btn btn-primary"> 
+                        {{ options.footer_over_link.title }}
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</footer>

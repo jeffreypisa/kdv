@@ -1,0 +1,94 @@
+.slick-slider {
+	.slick-list {
+		padding: 0 !important;
+		margin: 0 !important;
+	}
+	.slick-arrow {
+		padding: 0;
+		position: absolute;
+		z-index: 1;
+		top: 50%;
+		transform: translateY(-50%);
+		text-indent: -1000px;
+		overflow: hidden;
+		border: 0;
+		background-repeat: no-repeat;
+		width: 30px;
+		height: 30px;
+		background-size: contain;
+		background-color: transparent;
+		&.slick-prev {
+			left: 10px;
+			right: auto;
+			background-image: url(../img/chevron_left.svg);
+		}
+		&.slick-next {
+			right: 10px;
+			left: auto;
+			background-image: url(../img/chevron_right.svg);
+		}
+		&:hover {
+			opacity: 0.6;
+		}
+	}
+	.slick-dots {
+		position: absolute;
+		z-index: 1;
+		bottom: 30px;
+		left: 50%;
+		transform: translateX(-50%);
+		list-style-type: none;
+		padding: 0;
+		li {
+			display: inline-block;
+			margin: 10px;
+			button {
+				display: block;
+				padding: 0;
+				background: $orange;
+				border: 0;
+				border-radius: 20px;
+				height: 20px;
+				width: 20px;
+				text-indent: -9999px;
+				overflow: hidden;
+				&:hover {
+					background: lighten($orange, 5%);
+				}
+			}
+			&.slick-active {
+				button {
+					background: #fff;
+				}
+			}
+		}
+	}
+}
+
+
+@keyframes myMove {
+	0% { 
+		opacity: 1; 
+		clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%) 
+	}
+	50% { opacity: 1; }
+	51% { opacity: 1; }
+	100% { 
+		opacity: 1; 
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);  
+		transform: translate(-50%, -50%) scale(1);
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.slick-slider {
+		.slick-arrow {
+			&.slick-prev {
+				left: 30px;
+			}
+			&.slick-next {
+				right: 30px;
+			}
+		}
+	}
+}

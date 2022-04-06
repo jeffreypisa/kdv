@@ -1,0 +1,28 @@
+<section id="voorwieiskorral" class="mod-voorwie bg-green text-white d-none d-lg-block" data-scroll-section>
+	<div class="container-fluid anime-fadein">
+		<div class="text-center mb-3">
+			<h2> {{ post.voorwie_titel }} </h2>
+		</div>
+		<div class="row g-5">
+			{% for item in post.get_field('voorwie_persona') %}
+				<div class="col-lg-4">
+					<div class="text-center">
+						<img src="{{ Image(item.afbeelding).src }}" class="mb-5">
+					</div>
+					<div class="row">
+						<div class="col-sm-10 offset-sm-1">
+							<div class="text-center">
+								<h3> {{ item.titel }} </h3>
+							</div>
+							<ul class="list weight-600">
+								{% for usp in item.usp %}
+									<li> {{ usp.tekst }} </li>
+								{% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>

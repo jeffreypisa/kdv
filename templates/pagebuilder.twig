@@ -1,0 +1,21 @@
+{% set sectionno = '0' %}
+
+{% for item in post.get_field('stroken') %}
+
+	{% set sectionno = sectionno + '1' %}
+	
+	{% if item.acf_fc_layout == 'banner' %}
+		{% include 'pagebuilder/banner.twig' %}
+	
+	{% elseif item.acf_fc_layout == 'content' %}
+		{% include 'pagebuilder/content.twig' %}
+	
+	{% elseif item.acf_fc_layout == 'artikelen' %}
+		{% include 'pagebuilder/artikelen.twig' %}
+	
+	{% elseif item.acf_fc_layout == 'aanpak' %}
+		{% include 'pagebuilder/aanpak.twig' %}
+	
+	{% endif %}
+  
+{% endfor %}

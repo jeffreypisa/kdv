@@ -1,0 +1,20 @@
+.mod-content {
+	img {
+		max-width: 100%;
+	}
+	img.size-full {
+		width: calc(100% + 20px);
+		max-width: calc(100% + 20px);
+		height: auto;
+		margin: 0 -10px 10px -10px;
+	}
+	.kolom {
+		border-radius: 0px 15px;
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.mod-content {
+		
+	}
+}

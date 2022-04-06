@@ -1,0 +1,47 @@
+<section id="korralinjouworganisatie" class="mod-content mod-hoewerktdat mod-twocolors" data-scroll-section>
+	<div class="container-fluid">
+		<div class="row g-6">
+			<div class="col-lg-6 bg-greylight waves waves-grey-top">
+				<div class="anime-fadein">
+					{% for item in post.get_field('lichtgrijs_usp') %}
+						<div class="item mb-5">
+							<div class="row g-xl-5">
+								<div class="col-sm-auto d-flex align-items-center align-items-md-start">
+									<div class="circle">
+										{% if item.afbeelding %}
+											<img src="{{ Image(item.afbeelding).src }}" class="w-100 mb-5 h-auto">
+										{% endif %}
+									</div>
+								</div>
+								<div class="col-sm d-flex align-items-center">
+									<div class="content">
+										{% if item.titel %}
+											<h2 class="h3 text-green mb-1">{{ item.titel }}</h2>
+										{% endif %}
+										<span class="weight-600">
+											<i>
+												{% if item.tekst %}
+													{{ item.tekst }}
+												{% endif %}
+											</i>
+										</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="col-lg-6 bg-blue text-white waves waves-blue-top">
+				<div class="anime-fadein">
+					{% if post.blauw_titel %}
+						<h2 class="h3 text-green ">{{ post.blauw_titel }}</h2>
+					{% endif %}
+					{% if post.blauw_tekst %}
+						{{ post.get_field('blauw_tekst') }}
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

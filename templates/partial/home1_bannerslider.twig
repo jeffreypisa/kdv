@@ -1,0 +1,28 @@
+<section id="banner" class="mod-bannerslider waves waves-white" data-scroll-section>
+	<div class="bannerslider">
+		<div class="js-slick-bannerslider">
+			{% for item in post.get_field('slider_slides') %}
+				<div class="item d-flex align-items-center text-end text-lg-center">		
+					<div class="container-fluid">
+						<div class="row g-0">
+							<div class="col-10 offset-1 col-md-6 offset-md-0 mb-4 mb-md-0 image d-md-flex align-items-center" style="background-image: url({{ item.slider_afbeelding.url }})">
+							</div>
+							<div class="col-md-6 d-flex align-items-center">
+								<div class="content w-100">
+									<h2 class="weight-300">
+										{{ item.slider_titel }} 
+									</h2>
+									{{ item.slider_tekst }}
+									
+									{% if item.slider_link %}
+										<a class="btn btn-light" href="{{ item.slider_link.url }}" target="{{ item.slider_link.target }}">{{ item.slider_link.title }}</a>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section> 

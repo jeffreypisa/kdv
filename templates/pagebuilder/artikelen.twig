@@ -1,0 +1,65 @@
+<section id="section{{ sectionno }}" class="mod-artikelen bg-white {% if item.uitgebreide_weergave %}uitgebreide_weergave{% endif %}">
+	<div class="container-fluid container-lg">
+		<div class="row">
+			<div class="col-md-10">
+				<h6 class="sub mb-1"> Artikelen </h6>
+				{% if item.titel %}
+					<h2 class="mb-5"> {{ item.titel }} </h2>
+				{% endif %}
+			</div>
+		</div>
+		<div class="d-lg-none mb-4">
+			<div class="row d-flex align-items-center">
+				<div class="col-auto">
+					<div class="form-select-holder">
+						<select class="form-select" onchange="document.location.href = this.value">
+							<option disabled selected> Selecteer een thema </option>
+							{% for item in themas %}
+								<option value="{{ item.link }}">{{ item.title }}</option>
+							{% endfor %}
+						</select>
+					</div>
+				</div>
+				<div class="col-auto d-none d-sm-block">
+					{% if item.link %}
+						<a class="btn-link" href="{{ item.link.url }}" target="{{ item.link.target }}">{{ item.link.title }}</a>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-8 mb-30">
+				{% if artikelen|length > 1 %}
+					{% for item in artikelen|slice(0,1) %}
+						{% include 'tease-prime.twig' %}
+					{% endfor %}
+				{% endif %}
+			</div>
+			<div class="col-md-4 mb-30 d-none d-lg-block">
+				<div class="card bg-yellow mb-0" data-mh>
+					<div class="card-body">
+						<h3 class="h4 mb-3"> Thema's</h3>
+						{% for item in themas %}
+							<a href="{{ item.link }}" class="btn btn-light mb-3">{{ item.title }}</a>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+		{% if artikelen|length > 1 %}
+			<div class="row">
+				{% for item in artikelen|slice(1,4) %}
+					<div class="col-md-6 col-lg-4 mb-30 {% if loop.index == 3 %}d-none d-md-block{% endif %} {% if loop.index == 4 %}d-none d-md-block d-lg-none{% endif %}">
+						{% include 'tease.twig' %}
+					</div>
+				{% endfor %}
+			</div>
+		{% endif %}
+		{% if item.link %}
+			<div class="text-center">
+				<br>
+				<a class="btn btn-primary" href="{{ item.link.url }}" target="{{ item.link.target }}">{{ item.link.title }}</a>
+			</div>
+		{% endif %}
+	</div>
+</section>

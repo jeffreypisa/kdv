@@ -1,0 +1,36 @@
+<section class="mod-twocolors" data-scroll-section>
+	<div class="container-fluid">
+		<div class="row g-6">
+			<div class="col-lg-6 bg-green waves waves-green-top text-white">
+				<div class="anime-fadein">
+					{% if post.groen_titel %}
+						<h2 class="h3">{{ post.groen_titel }}</h2>
+					{% endif %}
+					{{ post.get_field('groen_formulier') }}
+				</div>
+			</div>
+			<div class="col-lg-6 bg-blue text-white waves waves-blue-top">
+				<div class="anime-fadein">
+					{% if post.blauw_afbeelding %}
+						<img class="circle" src="{{ Image(post.blauw_afbeelding).src }}" class="w-100 h-auto mb-4">	
+					{% endif %}
+					{% if post.blauw_titel %}
+						<h3 class="h4 text-green">{{ post.blauw_titel }}</h3>
+					{% endif %}
+					{% if post.blauw_tekst %}
+						{{ post.get_field('blauw_tekst') }}
+					{% endif %}
+					
+					{% if post.blauw_linkedin %}
+						<br>
+						<a class="" href="{{ post.blauw_linkedin.url }}" target="{{ post.blauw_linkedin.target }}">
+							<i class="fab fa-linkedin-square"></i>
+						</a>
+					{% endif %}
+					<br><br><br><br>
+					{{ post.get_field('blauw_nieuwsbrief') }}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,87 @@
+[data-lity] {
+	&:hover {
+		cursor: pointer;
+	}	
+}
+.btn {
+	font-weight: 600;
+	line-height: 40px;
+	color: #fff;
+	transition: .4s $ease;
+	padding: 0 30px;
+	position: relative;
+	border-radius: 100px;
+	font-size: 16px;
+	font-weight: 900;
+	&.btn-light {
+		background: #fff;
+		color: $greendark;
+		&:hover, &:focus, &:target {
+			background: $greenlight;
+			color: #fff;
+		}
+	}
+	&.btn-primary {
+		background: $greendark;
+		color: #fff;
+		&:hover, &:focus, &:target {
+			background: $greenlight;
+			color: #fff;
+		}
+	}
+	&.btn-secondary {
+		background: $grey;
+		color: $green;
+		&:hover, &:focus, &:target {
+			background: $greenlight;
+			color: #fff;
+		}
+		&.active {
+			pointer-events: none;
+			background: $greendark;
+			color: #fff;
+		}
+	}
+	&.btn-outline-primary {
+		background: #fff;
+		color: $greendark;
+		border: 1px solid $greendark;
+		&:hover, &:focus, &:target {
+			background: $greenlight;
+			border-color: $greenlight;
+			color: #fff;
+		}
+	}
+}
+
+.btn-link {
+	text-decoration: none;
+	color: $greendark;
+	transition: 0.4s $ease;
+	font-weight: 600;
+	&:after {
+		display: inline-block;
+		font-style: normal;
+		font-variant: normal;
+		text-rendering: auto;
+		-webkit-font-smoothing: antialiased;
+		font-family: "Font Awesome 5";
+		font-weight: 700;
+		content: "\f054";
+		font-size: 12px;
+		transition: 0.4s $ease;
+		margin-left: 8px;
+	}
+	&:hover {
+		text-decoration: none;
+		color: $greenlight;
+		&:after {
+			margin-left: 12px;
+			color: $greenlight;
+		}
+	}
+}
+
+@include media-breakpoint-up(xl) {
+
+}

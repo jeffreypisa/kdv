@@ -1,0 +1,57 @@
+.loaded {
+	.mod-banner {
+
+	}
+}
+
+.mod-banner {
+	position: relative;
+	padding: 100px 0;
+	min-height: 400px;
+	font-size: 21px;
+	&.xl {
+		min-height: 600px;
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(180.14deg, #000000 32.84%, rgba(0, 94, 124, 0) 111.22%);
+		mix-blend-mode: multiply;
+		opacity: 0.2;
+		z-index: 0;
+	}
+	.content {
+		z-index: 1;
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.mod-banner {
+		min-height: 500px;
+		&.xl {
+			min-height: 600px;
+		}
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.mod-banner {
+		min-height: 650px;
+		&.xl {
+			height: 800px;
+		}
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	.mod-banner {
+		height: 800px;
+		&.xl {
+			height: 1000px;
+		}
+	}
+}

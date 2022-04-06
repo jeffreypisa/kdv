@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 645 284" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="645" height="284"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <g id="Mask"></g>
+            <g mask="url(#mask-2)">
+                <g transform="translate(0.000000, 1.000000)">
+                    <g id="curved_shape" transform="translate(0.000000, 1.000000)" opacity="0.3">
+                        <path d="M645,0 C432.721542,0 483.342396,282 0,282 L645,282 L645,0 Z" id="Path" fill="#8BC53F" fill-rule="nonzero"></path>
+                    </g>
+                    <g id="curved_line">
+                        <path d="M0,282 C483.342396,282 432.721542,0 645,0" id="Path" stroke="#01763D" stroke-width="2"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
