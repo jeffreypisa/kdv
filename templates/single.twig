@@ -3,14 +3,97 @@
 {% block content %}
 	<div class="content-wrapper">
 		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-			
+			{% set auteur = Post(post.auteur) %}
+			<section class="single-banner">
+				<div class="fill-space" data-rellax-speed="-3">
+					<div class="bg-cover" style="background-image: url({{ Image(post.thumbnail).src|resize(1920) }})" >
+					</div>
+				</div>
+			</section>
 			<section class="mod-content bg-transparent" data-scroll-section>
 				<div class="container">
-					<h1 class="mb-0"> {{ post.title }} </h1>
+					<div class="panel">
+						<a href="{{ site.url }}/themas" class="btn-link mb-3 d-block"> Terug</a>
+						<h1 class="h2"> {{ post.title }} </h1>
+						<div class="meta mb-5">
+							<div class="row">
+								<div class="col-auto">
+									<i class="fas fa-calendar"></i> {{ post.date }}
+								</div>
+								<div class="col-auto">
+									<i class="fas fa-user"></i> {{ auteur.title }}
+								</div>
+							</div>
+						</div>
+						<div class="row g-5">
+							<div class="order-last order-lg-first col-lg-4 col-xl-3">
+								<div class="row">
+									<div class="col-md-6 col-lg-12">
+										<div class="card bg-yellow text-black mb-30">
+											<div class="card-body p-4">
+												<h4> Partner </h4>
+												{{ post.partner }}
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6 col-lg-12">
+										<div class="tags mb-30">
+											{% for tag in post.terms('artikelen_tags') %}
+									   		<a href="{{ tag.link }}" class="btn btn-outline-primary mb-2">{{ tag.title }}</a>
+											{% endfor %}
+										</div>
+										
+										<div class="card bg-greylight mb-30">
+											<div class="card-body">
+												<a href="" class="btn-link mb-2"><i class="fas fa-check"></i> Volg dit project</a>
+												<div class="clearfix"></div>
+												<a href="" class="btn-link"><i class="fas fa-share-square"></i> Artikel delen</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-8 col-xl-9">
+								{{ post.content }}
+								<div class="auteur mb-5">
+									{{ auteur.content }}
+								</div>
+								<div class="volg card bg-greylight mb-30">
+									<div class="card-body">
+										<div class="row">
+											<div class="col">
+												<a href="" class="btn-link"><i class="fas fa-check"></i> Volg dit project</a>
+											</div>
+											<div class="col-auto">
+												<a href="" class="btn-link"><i class="fas fa-share-square"></i> Artikel delen</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 			
-			{{ post.content }}
+			<section class="mod-artikelen bg-transparent">
+				<div class="container-fluid container-lg">
+					<div class="row">
+						<div class="col-md-10 offset-md-1 text-center ">
+							<h3 class="mb-5"> Meer nieuws over {{ post.terms('artikelen_themas')|first }} </h3>
+						</div>
+					</div>
+					{% if artikelen|length > 1 %}
+						<div class="row">
+							{% for item in artikelen|slice(0,3) %}
+								<div class="col-md-6 col-lg-4 mb-30 {% if loop.index == 3 %}d-none d-md-block{% endif %} {% if loop.index == 4 %}d-none d-md-block d-lg-none{% endif %}">
+									{% include 'tease.twig' %}
+								</div>
+							{% endfor %}
+						</div>
+					{% endif %}
+				</div>
+			</section>
 		</article>
 	</div><!-- /content-wrapper -->
 {% endblock %}

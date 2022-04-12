@@ -1,4 +1,4 @@
-<header class="header text-white d-flex align-items-center">
+<header class="header {{ headertextcolor }} d-flex align-items-center">
 	<div class="container-fluid"> 
 		<div class="row g-2">
 			<div class="col d-flex align-items-center">
@@ -6,10 +6,19 @@
 					<span class="d-none">{{ site.name }}</span>
 				</a>
 			</div>
-			<div class="col-auto d-none d-lg-flex align-items-center">
+			<div class="col-auto d-none d-xl-flex align-items-start">
 				{% include "menu.twig" with {'items': menu.get_items} %}
 			</div>
-			<div class="col-auto d-lg-none">
+			{% if options.header_link or options.landen|length > 1 %}
+				<div class="col-auto d-none d-xl-flex align-items-start">
+					<div class="service">
+						{% if options.header_link %}
+							<a class="btn btn-primary" href="{{ options.header_link.url }}" target="{{ options.header_link.target }}">{{ options.header_link.title }}</a>
+						{% endif %}
+					</div>
+				</div>
+			{% endif %}
+			<div class="col-auto d-xl-none">
 				<a id="mobilemenubtn" class="btn-menu d-block immune js-menu ">
 					<div class="lines">
 						<span></span>

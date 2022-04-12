@@ -1,0 +1,85 @@
+.mod-themas {
+	.tab-content {
+		.thatpartwrapper {
+
+			background: url(../img/union.svg);
+			background-size: 100%;
+			
+			.thatpart {
+				position: relative;
+				padding-top: 80%;
+				.about {
+					padding-left: 80px;
+					position: absolute;
+					top: 0;
+					left: 0;
+					padding-top: 20px;
+
+					h3 {}
+
+					.nr {
+						left: -80px;
+						top: 0;
+						position: absolute;
+						font-size: 66px;
+						line-height: 66px;
+						font-weight: 700;
+						color: #000;
+
+						&:after {
+							content: '';
+							position: absolute;
+							top: -30px;
+							left: 0px;
+							height: 130px;
+							width: 130px;
+							background: $yellow;
+							z-index: -1;
+							border-radius: 400px;
+						}
+					}
+				}
+			}
+			.projects {
+				.greenlist {
+					color: $greendark;
+					font-weight: 900;
+					a {
+						color: $greendark;
+						text-decoration: none;
+						font-weight: 900;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.mod-themas {
+		.tab-content {
+			.thatpartwrapper {
+				.thatpart {
+					.about {
+						width: 50%;
+						left: 60px;
+
+						.nr {
+							top: 15px;
+							left: 0px;
+							font-size: 82px;
+							line-height: 82px;
+
+							&:after {
+								width: 220px;
+								height: 220px;
+								left: -90px;
+								top: -65px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -23,10 +23,15 @@ $context = Timber::get_context();
  $postcatid = get_queried_object()->term_id;
  $context['current_category'] = $postcatid;
  
+ if ($postcatid->category_parent == 0) {
+    $context['category_has_parent'] = 'heeftouder';
+}
+
  $terms = \Timber::get_terms(array('taxonomy' => 'artikelen_themas', 'hide_empty' => true, 'parent' => 0));
  $context['categories'] = $terms;
 
-     
+ $context['search'] = get_search_query();
+
  $context['posts'] = Timber::get_posts();
  
  Timber::render( array( 'archive-themas.twig' ), $context );

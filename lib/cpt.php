@@ -22,7 +22,7 @@ function create_posttype() {
 			'public' 					=> true,
 			'show_in_rest' 				=> true,
 			'has_archive'             	=> false,
-			'rewrite' 					=> array( 'slug' => 'themas/%artikelen_category%', 
+			'rewrite' 					=> array( 'slug' => 'themas/%artikelen_themas%', 
 			'with_front' 	=> false ),
 			'supports'                	=> array( 'title', 'editor', 'thumbnail' )
 		)
@@ -47,7 +47,7 @@ function create_posttype() {
 			'public' 					=> true,
 			'show_in_rest' 				=> true,
 			'has_archive'             	=> true,
-			'rewrite' 					=> array( 'slug' => 'artikelen/%artikelen_category%', 
+			'rewrite' 					=> array( 'slug' => 'auteur', 
 			'with_front' 	=> false ),
 			'supports'                	=> array( 'title', 'editor' )
 		)

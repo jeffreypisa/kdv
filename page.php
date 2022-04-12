@@ -26,6 +26,12 @@ $context = Timber::context();
 $timber_post     = new Timber\Post();
 $context['post'] = $timber_post;
 
+$terms = \Timber::get_terms(array('taxonomy' => 'artikelen_themas', 'hide_empty' => true, 'parent' => 0));
+$context['categories'] = $terms;
+
+$terms = \Timber::get_terms(array('taxonomy' => 'artikelen_themas', 'hide_empty' => true));
+$context['allcategories'] = $terms;
+ 
 $args_posts = array(
     'post_type'             => 'artikelen',
     'posts_per_page'        => 5,

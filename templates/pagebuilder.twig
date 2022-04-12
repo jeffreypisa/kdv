@@ -16,6 +16,12 @@
 	{% elseif item.acf_fc_layout == 'aanpak' %}
 		{% include 'pagebuilder/aanpak.twig' %}
 	
+	{% elseif item.acf_fc_layout == 'themas' %}
+		{% include 'pagebuilder/themas.twig' %}
+	
+	{% elseif item.acf_fc_layout == 'videos' %}
+		{% include 'pagebuilder/videos.twig' %}
+	
 	{% endif %}
   
 {% endfor %}

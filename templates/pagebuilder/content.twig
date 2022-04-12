@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-md-10 offset-md-1 col-xl-8 offset-xl-2 text-center">
 				{% if item.subtitel %}
-					<h6 class="sub mb-0"> {{ item.subtitel }} </h6>
+					<h6 class="sub mb-2"> {{ item.subtitel }} </h6>
 				{% endif %}
 				{% if item.titel %}
 					<h2> {{ item.titel }} </h2>
@@ -22,7 +22,7 @@
 						<div class="kolom {{ kolom.achtergrond }} {% if kolom.achtergrond != 'bg-transparent' %}p-4 {% endif %}">
 							<div data-mh>
 								{% if kolom.titel %}
-									<h3 {% if kolom.achtergrond != 'bg-transparent' %}class="h4"{% endif %}> {{ kolom.titel }} </h3>
+									<h3 class="mb-2 {% if kolom.achtergrond != 'bg-transparent' %}h4{% endif %}""> {{ kolom.titel }} </h3>
 								{% endif %}
 								{% if kolom.tekst %}
 									<p> {{ kolom.tekst }} </p>
@@ -41,6 +41,26 @@
 							</div>
 							{% if kolom.link %}
 								<a class="btn btn-primary" href="{{ kolom.link.url }}" target="{{ kolom.link.target }}">{{ kolom.link.title }}</a>
+							{% endif %}
+							{% if kolom.download %}
+								<a class="btn btn-primary" href="{{ kolom.download.url }}" target="{{ kolom.download.target }}"><i class="fas fa-download"></i> {{ kolom.download.title }} </a>
+							{% endif %}
+							{% if kolom.sliderblok %}
+								<div class="js-slick-sliderblok">
+									{% for slide in kolom.sliderblok %}
+										<div class="item text-center">
+											{% if slide.subtitel %}
+												<p> {{ slide.subtitel }} </p>
+											{% endif %}
+											{% if slide.titel %}
+												<h5> {{ slide.titel }} </h5>
+											{% endif %}
+											{% if slide.tekst %}
+												<p> {{ slide.tekst }} </p>
+											{% endif %}
+										</div>
+									{% endfor %}
+								</div>
 							{% endif %}
 						</div>
 					</div>

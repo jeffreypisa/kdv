@@ -297,6 +297,33 @@
                                     "endpoint": 0
                                 },
                                 {
+                                    "key": "field_624afd6d5b3aa",
+                                    "label": "Achtergrond",
+                                    "name": "achtergrond",
+                                    "type": "select",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "bg-transparent": "Transparant",
+                                        "bg-white": "Wit",
+                                        "bg-greylight": "Lichtgrijs",
+                                        "bg-greenlightest": "Lichtgroen"
+                                    },
+                                    "default_value": false,
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "ui": 0,
+                                    "return_format": "value",
+                                    "ajax": 0,
+                                    "placeholder": ""
+                                },
+                                {
                                     "key": "field_624afbf95b39e",
                                     "label": "Titel",
                                     "name": "titel",
@@ -335,21 +362,6 @@
                                     "delay": 0
                                 },
                                 {
-                                    "key": "field_624afc1c5b3a0",
-                                    "label": "Link",
-                                    "name": "link",
-                                    "type": "link",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "return_format": "array"
-                                },
-                                {
                                     "key": "field_624afdf32fa42",
                                     "label": "Componenten",
                                     "name": "",
@@ -366,10 +378,10 @@
                                     "endpoint": 0
                                 },
                                 {
-                                    "key": "field_624afd6d5b3aa",
-                                    "label": "Achtergrond",
-                                    "name": "achtergrond",
-                                    "type": "select",
+                                    "key": "field_624afc1c5b3a0",
+                                    "label": "Link",
+                                    "name": "link",
+                                    "type": "link",
                                     "instructions": "",
                                     "required": 0,
                                     "conditional_logic": 0,
@@ -378,46 +390,7 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "choices": {
-                                        "bg-transparent": "Transparant",
-                                        "bg-white": "Wit",
-                                        "bg-greylight": "Lichtgrijs",
-                                        "bg-greenlightest": "Lichtgroen"
-                                    },
-                                    "default_value": false,
-                                    "allow_null": 0,
-                                    "multiple": 0,
-                                    "ui": 0,
-                                    "return_format": "value",
-                                    "ajax": 0,
-                                    "placeholder": ""
-                                },
-                                {
-                                    "key": "field_624afc435b3a2",
-                                    "label": "Icoon",
-                                    "name": "icoon",
-                                    "type": "gallery",
-                                    "instructions": "",
-                                    "required": 0,
-                                    "conditional_logic": 0,
-                                    "wrapper": {
-                                        "width": "",
-                                        "class": "",
-                                        "id": ""
-                                    },
-                                    "return_format": "array",
-                                    "preview_size": "medium",
-                                    "insert": "append",
-                                    "library": "all",
-                                    "min": "",
-                                    "max": "",
-                                    "min_width": "",
-                                    "min_height": "",
-                                    "min_size": "",
-                                    "max_width": "",
-                                    "max_height": "",
-                                    "max_size": "",
-                                    "mime_types": ""
+                                    "return_format": "array"
                                 },
                                 {
                                     "key": "field_624afcb35b3a4",
@@ -477,9 +450,9 @@
                                             "maxlength": ""
                                         },
                                         {
-                                            "key": "field_624afd3b5b3a8",
-                                            "label": "Tekst",
-                                            "name": "tekst",
+                                            "key": "field_625481d88ffd7",
+                                            "label": "Subtitel",
+                                            "name": "subtitel",
                                             "type": "text",
                                             "instructions": "",
                                             "required": 0,
@@ -494,6 +467,25 @@
                                             "prepend": "",
                                             "append": "",
                                             "maxlength": ""
+                                        },
+                                        {
+                                            "key": "field_624afd3b5b3a8",
+                                            "label": "Tekst",
+                                            "name": "tekst",
+                                            "type": "textarea",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": 0,
+                                            "wrapper": {
+                                                "width": "",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "default_value": "",
+                                            "placeholder": "",
+                                            "maxlength": "",
+                                            "rows": "",
+                                            "new_lines": ""
                                         }
                                     ]
                                 },
@@ -515,6 +507,33 @@
                                     "ui": 0,
                                     "ui_on_text": "",
                                     "ui_off_text": ""
+                                },
+                                {
+                                    "key": "field_624afc435b3a2",
+                                    "label": "Icoon",
+                                    "name": "icoon",
+                                    "type": "gallery",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "preview_size": "medium",
+                                    "insert": "append",
+                                    "library": "all",
+                                    "min": "",
+                                    "max": "",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": ""
                                 }
                             ]
                         }
@@ -738,6 +757,32 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_625593b617427",
+                            "label": "Achtergrond",
+                            "name": "achtergrond",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "bg-white": "Wit",
+                                "bg-greylight": "Lichtgrijs",
+                                "bg-greenlightest": "Lichtgroen"
+                            },
+                            "default_value": false,
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
                             "key": "field_624afe40b5b52",
                             "label": "Titel",
                             "name": "titel",
@@ -943,5 +988,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1649245539
+    "modified": 1649775578
 }

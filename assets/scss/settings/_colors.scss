@@ -49,6 +49,11 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
     color: #{$val} !important;
   }
 }
+.bg-white,
+.bg-greylight,
+.bg-greenlightest {
+  color: $dark;
+}
 
 // Gradient
 //

@@ -1,13 +1,8 @@
 {% if menu %}
-	<ul class="nav">
-		<li class="nav-item">
-			<a class="nav-link h3 mb-2" href="{{ site.url }}">
-				Home
-			</a>
-		</li>
+	<ul class="nav text-end w-100">
 		{% for item in items %}
 			<li class="nav-item {{ item.classes | join(' ') }}">
-				<a class="nav-link h3 mb-2" target="{{ item.target }}" href="{{ item.link }}">
+				<a class="nav-link h3 weight-400 mb-4" target="{{ item.target }}" href="{{ item.link }}">
 					{{ item.title }}
 				</a>
 			</li>

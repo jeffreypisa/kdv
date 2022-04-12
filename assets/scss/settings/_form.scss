@@ -6,7 +6,7 @@
 }
 
 .form-control {
-	box-shadow: $box-shadow;
+	
 }
 
 
@@ -28,7 +28,7 @@ $form-label-color:                      null;
 // scss-docs-end form-label-variables
 
 // scss-docs-start form-input-variables
-$input-padding-y:                       $input-btn-padding-y + 1.555rem;
+$input-padding-y:                       $input-btn-padding-y;
 $input-padding-x:                       $input-btn-padding-x;
 $input-font-family:                     $input-btn-font-family;
 $input-font-size:                       $input-btn-font-size;
@@ -43,26 +43,26 @@ $input-padding-y-lg:                    $input-btn-padding-y-lg;
 $input-padding-x-lg:                    $input-btn-padding-x-lg;
 $input-font-size-lg:                    $input-btn-font-size-lg;
 
-$input-bg:                              $body-bg;
+$input-bg:                              $greylight;
 $input-disabled-bg:                     $gray-200;
 $input-disabled-border-color:           null;
 
 $input-color:                           $body-color;
-$input-border-color:                    #fff;
+$input-border-color:                    $greylight;
 $input-border-width:                    1px;
-$input-box-shadow:                      $box-shadow;
+$input-box-shadow:                      null;
 
-$input-border-radius:                   none;
+$input-border-radius:                   4px;
 $input-border-radius-sm:                $border-radius-sm;
 $input-border-radius-lg:                $border-radius-lg;
 
 $input-focus-bg:                        $input-bg;
-$input-focus-border-color:              $orange;
+$input-focus-border-color:              $greendark;
 $input-focus-color:                     $input-color;
 $input-focus-width:                     $input-btn-focus-width;
 $input-focus-box-shadow:                $box-shadow;
 
-$input-placeholder-color:               $gray-500;
+$input-placeholder-color:               $dark;
 $input-plaintext-color:                 $body-color;
 
 $input-height-border:                   $input-border-width * 2;

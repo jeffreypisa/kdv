@@ -82,6 +82,7 @@ Theme by Emonks
 @import 'components/header';
 @import 'components/form';
 @import 'components/list';
+@import 'components/searchinput';
 @import 'components/footer';
 @import 'components/section';
 @import 'components/dropdown';
@@ -90,7 +91,7 @@ Theme by Emonks
 @import 'components/mobilemenu';
 @import 'components/content';
 @import 'components/tease';
-@import 'components/waves';
+@import 'components/single';
 
 // Plugins
 @import 'plugins/slick';
@@ -100,5 +101,6 @@ Theme by Emonks
 
 // Pagebuilder
 @import 'pagebuilder/content';
+@import 'pagebuilder/themas';
 @import 'pagebuilder/banner';
 @import 'pagebuilder/aanpak';

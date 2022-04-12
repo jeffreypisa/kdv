@@ -506,6 +506,16 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
+    "\/assets\/img\/union.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/img\/union.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
     "\/assets\/js\/main-min.js" : {
       "bF" : 0,
       "ft" : 64,
@@ -882,6 +892,21 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/assets\/scss\/components\/_searchinput.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/assets\/scss\/components\/_searchinput.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/assets\/scss\/components\/_section.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -942,21 +967,6 @@
       "pg" : 0,
       "sct" : 0
     },
-    "\/assets\/scss\/components\/_waves.scss" : {
-      "aP" : 1,
-      "bl" : 0,
-      "co" : 0,
-      "dP" : 10,
-      "ec" : 1,
-      "ft" : 4,
-      "ma" : 1,
-      "oA" : 1,
-      "oAP" : "\/assets\/scss\/components\/_waves.css",
-      "oF" : 0,
-      "oS" : 3,
-      "pg" : 0,
-      "sct" : 0
-    },
     "\/assets\/scss\/main.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -1012,6 +1022,21 @@
       "ma" : 1,
       "oA" : 1,
       "oAP" : "\/assets\/scss\/pagebuilder\/_content.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/assets\/scss\/pagebuilder\/_themas.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/assets\/scss\/pagebuilder\/_themas.css",
       "oF" : 0,
       "oS" : 3,
       "pg" : 0,
@@ -1347,12 +1372,28 @@
       "oAP" : "\/lib\/gutenberg.php",
       "oF" : 0
     },
+    "\/lib\/helpers.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/lib\/helpers.php",
+      "oF" : 0
+    },
     "\/lib\/includes.php" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/lib\/includes.php",
+      "oF" : 0
+    },
+    "\/lib\/listallcats.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/lib\/listallcats.php",
       "oF" : 0
     },
     "\/lib\/menu.php" : {
@@ -1369,6 +1410,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/lib\/optionspage.php",
+      "oF" : 0
+    },
+    "\/lib\/permalinks.php" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/lib\/permalinks.php",
       "oF" : 0
     },
     "\/lib\/svg.php" : {
@@ -1651,14 +1700,6 @@
       "oAP" : "\/templates\/mobilemenu.twig",
       "oF" : 0
     },
-    "\/templates\/page-contact.twig" : {
-      "cB" : 0,
-      "ft" : 8192,
-      "hM" : 0,
-      "oA" : 0,
-      "oAP" : "\/templates\/page-contact.twig",
-      "oF" : 0
-    },
     "\/templates\/page-plugin.twig" : {
       "cB" : 0,
       "ft" : 8192,
@@ -1715,12 +1756,20 @@
       "oAP" : "\/templates\/pagebuilder\/content.twig",
       "oF" : 0
     },
-    "\/templates\/pagebuilder\/video.twig" : {
+    "\/templates\/pagebuilder\/themas.twig" : {
       "cB" : 0,
       "ft" : 8192,
       "hM" : 0,
       "oA" : 0,
-      "oAP" : "\/templates\/pagebuilder\/video.twig",
+      "oAP" : "\/templates\/pagebuilder\/themas.twig",
+      "oF" : 0
+    },
+    "\/templates\/pagebuilder\/videos.twig" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/templates\/pagebuilder\/videos.twig",
       "oF" : 0
     },
     "\/templates\/partial\/afbeelding.twig" : {

@@ -7,6 +7,16 @@
 	<body class="{{ body_class }}" data-template="base.twig" data-scroll-container>	
 		{% include 'mobilemenu.twig' %}
 		
+		{% set headertextcolor = 'text-dark' %}
+		
+		{% for item in post.get_field('stroken') %}
+			{% if item.acf_fc_layout == 'banner' %}
+				{% if loop.index == '1' %}
+					{% set headertextcolor = 'text-white' %}
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+		
 		{% block header %}
 			{% include 'header.twig' %}
 		{% endblock %}

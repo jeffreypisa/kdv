@@ -1,27 +1,39 @@
 <footer id="footer" class="section bg-greylight" data-scroll-section>
     <div class="container">
         <div class="row">
-            <div class="order-last order-md-first col-lg-4">
-                <img src="{{ theme.link }}/assets/img/logo_kdv.svg" width="132" height="132" class="mb-30">
-                {{ options.footer_adres }}
+            <div class="order-last order-lg-first col-lg-4">
+                <div class="logoblock">
+                    <div class="row">
+                        <div class="col-md-6 col-lg-12 text-center text-md-end text-lg-start">
+                            <img src="{{ theme.link }}/assets/img/logo_kdv.svg" width="132" height="132" class="mb-30">
+                        </div>
+                        <div class="col-md-4 col-lg-12 text-center text-md-start">
+                            {{ options.footer_adres }}
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="col-md-6 col-lg-4">
-                {% if options.footer_nieuwsbrief_titel %}
-                    <h4> {{ options.footer_nieuwsbrief_titel }} </h4>
-                {% endif %}
-                {{ options.footer_nieuwsbrief_tekst }}
+                <div class="nieuwsbrief">
+                    {% if options.footer_nieuwsbrief_titel %}
+                        <h4 class="text-greendark"> {{ options.footer_nieuwsbrief_titel }} </h4>
+                    {% endif %}
+                    {{ options.footer_nieuwsbrief_tekst }}
+                </div>
             </div>
             <div class="col-md-6 col-lg-4">
-                {% if options.footer_over_titel %}
-                    <h4> {{ options.footer_over_titel }} </h4>
-                {% endif %}
-                {{ options.footer_over_tekst }}
-                <br>
-                {% if options.footer_over_link %}
-                    <a href="{{ options.footer_over_link.url }}" target="{{ options.footer_over_link.target }}" class="btn btn-primary"> 
-                        {{ options.footer_over_link.title }}
-                    </a>
-                {% endif %}
+                <div class="over">
+                    {% if options.footer_over_titel %}
+                        <h4 class="text-greendark"> {{ options.footer_over_titel }} </h4>
+                    {% endif %}
+                    {{ options.footer_over_tekst }}
+                    <br>
+                    {% if options.footer_over_link %}
+                        <a href="{{ options.footer_over_link.url }}" target="{{ options.footer_over_link.target }}" class="btn btn-primary"> 
+                            {{ options.footer_over_link.title }}
+                        </a>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>

@@ -1,0 +1,85 @@
+<section id="section{{ sectionno }}" class="mod-themas bg-transparent logospacer">
+	<div class="container">
+		<div class="row text-center mb-5">
+			<div class="col-md-10 offset-md-1 ">
+				<h1 class="h2 mb-3 mt-3">{{ item.titel }}</h1>
+			</div>
+			<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+				<p class="mb-3">{{ item.lead }}</p>
+			</div>
+		</div>
+	</div>
+	{% if categories %}
+	<div class="container">
+		<div class="tabs mb-5">
+			<ul class="row g-2 nav nav-pills mb-3" id="pills-tab" role="tablist">
+				<!--
+				 	<div class="col-sm-6 col-md-4 col-lg-3">
+						<a href="/themas" class="btn btn-secondary btn-block w-100 mb-4 {% if current_category == '' %} active {% endif %}">Themas</a>
+				 	</div>
+			  	-->
+
+				{% for item in categories %}
+
+				<li class="col-md-6 col-lg-3 nav-item" role="presentation">
+
+					<button class="btn btn-secondary w-100 {% if loop.first %}active{% endif %}" id="pills-{{ loop.index }}-tab" data-bs-toggle="pill" data-bs-target="#pills-{{ loop.index }}" type="button" role="tab" aria-controls="pills-{{ loop.index }}" aria-selected="true">{{ item.title }}</button>
+
+				</li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+	<div class="tab-content" id="pills-tabContent">
+
+		{% for item in categories %}
+
+
+		<div class="tab-pane fade  {% if loop.first %}show active{% endif %}" id="pills-{{ loop.index }}" role="tabpanel" aria-labelledby="pills-{{ loop.index }}-tab">
+			<div class="thatpartwrapper">
+				<div class="container">
+					<div class="thatpart">
+						<div class="about">
+							<div class="nr"> {{ loop.index }}.</div>
+							<h3> {{ item.title }}</h3>
+							<p>{{ item.description }} </p>
+							<a href="/themas" class="btn btn-primary">Naar alle artikelen</a>
+						</div>
+						<div class="projects">
+							<h5> Projecten binnen dit thema </h5>
+							<ol class="greenlist">
+								{% for child in function('get_term_children', item.id, 'artikelen_themas') %}
+									{% set child = Term(child) %}
+									<li><a href="{{ child.title }}">{{ child.title }} </a>
+								{{ child.description }} {{ Image(child.afbeelding).src }}</li>
+								 {% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			<section class="moreposts">
+				<div class="container-fluid container-lg">
+					<div class="row">
+						<div class="col-md-10 offset-md-1 text-center ">
+							<h3 class="mb-5"> Meer nieuws over {{ item.title }} </h3>
+						</div>
+					</div>
+					{% if artikelen|length > 1 %}
+						<div class="row">
+							{% for item in artikelen|slice(0,3) %}
+								<div class="col-md-6 col-lg-4 mb-30 {% if loop.index == 3 %}d-none d-md-block{% endif %} {% if loop.index == 4 %}d-none d-md-block d-lg-none{% endif %}">
+									{% include 'tease.twig' %}
+								</div>
+							{% endfor %}
+						</div>
+					{% endif %}
+				</div>
+			</section>
+		</div>
+		
+		{% endfor %}
+	</div>
+	{% endif %}
+	
+</section>

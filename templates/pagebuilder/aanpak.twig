@@ -18,10 +18,12 @@
 						<div class="space-right">
 							{% if item.tekst %}
 								<p> {{ item.tekst }} </p>
-							{% endif %}
+							{% endif %}		
 							{% if item.link %}
-								<a class="btn btn-primary" href="{{ item.link.url }}" target="{{ item.link.target }}">{{ item.link.title }}</a>
-							{% endif %}
+								<div class="text-center text-lg-start">
+									<a class="btn btn-primary" href="{{ item.link.url }}" target="{{ item.link.target }}">{{ item.link.title }}</a>
+								</div>
+							{% endif %}		
 						</div>
 					</div>
 				</div>

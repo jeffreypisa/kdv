@@ -38,10 +38,12 @@
 			<div class="col-md-4 mb-30 d-none d-lg-block">
 				<div class="card bg-yellow mb-0" data-mh>
 					<div class="card-body">
-						<h3 class="h4 mb-3"> Thema's</h3>
+						<h3 class="h4 mb-3"> Thema's</h3>				
 						{% for item in themas %}
-							<a href="{{ item.link }}" class="btn btn-light mb-3">{{ item.title }}</a>
-						{% endfor %}
+							<div class="w-100">
+								<a href="{{ item.link }}" class="btn btn-light mb-3">{{ item.title }}</a>
+							</div>
+						{% endfor %}				
 					</div>
 				</div>
 			</div>

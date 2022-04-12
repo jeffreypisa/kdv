@@ -1,37 +1,59 @@
-{# This file demonstrates using most of the index.twig template and modifying 
-   just a small part. See `search.twig` for an example of another approach #}
-
 {% extends "base.twig" %}
 
 {% block content %}
-    <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-        <section class="mod-archive">
-            <div class="container">
-                <h1 class="h2 mb-5 mt-3 text-center">Waar wil je mee aan de slag?</h1>
-                {% if categories %}
+<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+    <section class="mod-archive logospacer">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-md-10 offset-md-1 ">
+                    <h1 class="h2 mb-3 mt-3">{{ options.archief_thema_titel }}</h1>
+                </div>
+                <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+                    <p class="mb-5">{{ options.archief_thema_tekst }}</p>
 
-                   <div class="row no-gutters">
-                      <div class="col-auto col-md">
-                         <a href="/themas" class="btn btn-secondary {% if current_category == '' %} active {% endif %}">Themas</a>
-                      </div>
-                      {% for item in categories %}
-                         <div class="col-auto">
-                            <a href="{{ item.link }}" class="btn btn-secondary {% if item.id == current_category %} active {% endif %}">{{ item.title }}</a>
+                    <div class="mod-searchinput mb-4">
+                        <form role="search" method="get" id="searchform" action="{{ site.url }}">
+                            <div class="form-group">
+                                <label class="d-none" for="s">Zoeken </label>
+                                <input class="form-control" type="text" value="" name="s" id="s" placeholder="{{ __('Typ je zoekwoord in', 'timber-foundation')|e }}">
+                                <div class="searchicon">
+                                    <input type="submit" id="searchsubmit" value="{{ __('zoeken', 'timber-foundation')|e }}" />
+                                    <i class="fas fa-search"></i>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+       
+                </div>
+            </div>
+                {% if categories %}
+                <div class="row g-2 mb-4">
+                    <!--
+                         <div class="col-sm-6 col-md-4 col-lg-3">
+                            <a href="/themas" class="btn btn-secondary btn-block w-100 mb-4 {% if current_category == '' %} active {% endif %}">Themas</a>
                          </div>
-                      {% endfor %}
-                   </div>
-        
+                      -->
+
+                    {% for item in categories %}
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <a href="{{ item.link }}" class="btn btn-secondary w-100 mb-4 {% if item.id == current_category %} active {% endif %}">{{ item.title }}</a>
+                    </div>
+                    {% endfor %}
+                </div>
                 {% endif %}
+
                 <div class="row mt-2 anime-fadein">
                     {% for item in posts %}
 
-                      <div class="col-md-6 col-lg-4 mb-30">
-                          {% include ['tease.twig'] %}
-                      </div>
+                    <div class="col-md-6 col-lg-4 mb-30">
+                        {% include ['tease.twig'] %}
+                    </div>
                     {% endfor %}
                 </div>
+
                 {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
             </div>
-        </section>
-    </article>
+    </section>
+</article>
 {% endblock %}

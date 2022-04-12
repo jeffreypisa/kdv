@@ -43,16 +43,23 @@
 	}
 }
 
-@include media-breakpoint-down(lg) {
+@include media-breakpoint-down(xl) {
 	.btn-menu {
 		cursor: pointer;
 		position: fixed;
 		background: $greendark;
-		bottom: 60px;
+		top: 30px;
 		right: 30px;
 		padding: 19px 16px 11px;
 		border-radius: 100px;
 		z-index: 100;
+	}
+}
+
+@include media-breakpoint-down(md) {
+	.btn-menu {
+		bottom: 30px;
+		top: auto;
 	}
 }
 

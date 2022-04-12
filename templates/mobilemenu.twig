@@ -1,7 +1,17 @@
-<div class="mod-mobilemenu text-white d-flex align-items-center">
+<div class="mod-mobilemenu text-white">
 	<div class="menucontent w-100">
 		<div class="container">
 			{% include "menu-mobilemenu.twig" with {'items': menu.get_items} %}
+			{% if options.header_link or options.landen|length > 1 %}
+
+				<div class="service text-end">
+					{% if options.header_link %}
+						<a class="btn btn-outline-light" href="{{ options.header_link.url }}" target="{{ options.header_link.target }}">{{ options.header_link.title }}</a>
+					{% endif %}
+				</div>
+
+			{% endif %}
 		</div>
 	</div>
 </div>
+<div class="menuoverlay"></div>

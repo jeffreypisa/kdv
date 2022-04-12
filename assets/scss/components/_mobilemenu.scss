@@ -1,11 +1,23 @@
+.menuoverlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #000000;
+	mix-blend-mode: multiply;
+	z-index: -1;
+	opacity: 0;
+	transition: 1s $ease;
+}
+
 body .mod-mobilemenu {
 	position: fixed;
 	top: 0;
 	bottom: 0;
 	right: 0;
 	width: calc(100vw - 130px);
-	max-width: 300px;
-	padding: 100px 20px 20px;
+	padding: 120px 0px 30px;
 	transition: 0.3s ease-in-out;
 	background: $green;
 	overflow-y: scroll;
@@ -13,8 +25,8 @@ body .mod-mobilemenu {
 	-webkit-overflow-scrolling: touch;
 	transform: translateX(calc(100% + 1px));
 	box-shadow: 0px 0px 10px rgba($dark, 0.0);
-	z-index: 2;
-
+	z-index: 100;
+	
 	.closemenu {
 		margin-bottom: 30px;
 		display: block;
@@ -38,9 +50,21 @@ body .mod-mobilemenu {
 			}
 		}
 	}
-
+	
+	.service {
+		position: relative;
+		padding-top: 40px;
+		margin-top: 10px;
+		&:after {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 110px;
+			border: 1px dashed #FFFFFF;
+			content: '';
+		}
+	}
 	.menucontent {
-		padding: 10px;
 		margin: 0 auto;
 		transition: 0.6s ease-in-out;
 
@@ -54,14 +78,11 @@ body .mod-mobilemenu {
 				opacity: 0;
 				transform: translateX(-120px);
 				transition: 0.3s ease-in-out;
-				margin-bottom: 20px;
 
 				a {
 					display: inline-block;
-			
-					margin-bottom: 0;
 					transition: 0.2s ease-in-out;
-			
+					padding: 0;
 
 					h3 {
 						margin: 0;
@@ -126,24 +147,20 @@ body.opensidemenu {
 			}
 		}
 	}
+	.menuoverlay {
+		opacity: 0.42;
+		z-index: 99;
+	}
 }
 
 @include media-breakpoint-up(md) {
 	body .mod-mobilemenu {
-		padding: 140px 20px 20px;
-		width: 33.33%;
-		max-width: 100%;
-		.menucontent {
-			padding: 0px 10px;
-		}
+		width: 50%;
 	}
 }
 
 @include media-breakpoint-up(lg) {
 	body .mod-mobilemenu {
-		padding: 140px 20px 20px;
-		.menucontent {
-			padding: 30px 40px;
-		}
+		padding-top: 160px;
 	}
 }
