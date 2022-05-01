@@ -6,7 +6,7 @@
 					<h6 class="sub mb-2"> {{ item.subtitel }} </h6>
 				{% endif %}
 				{% if item.titel %}
-					<h2> {{ item.titel }} </h2>
+					<h2 class="mb-5"> {{ item.titel }} </h2>
 				{% endif %}
 				{% if item.tekst %}
 					<p> {{ item.tekst }} </p>
@@ -16,16 +16,18 @@
 		
 		{% if item.kolom %}
 			<div class="row g-5">
-			
+				
+				{% set col = 12 / item.kolom|length %}
+				
 				{% for kolom in item.kolom %}
-					<div class="col-md">
+					<div class="col-lg-{{ col }}">
 						<div class="kolom {{ kolom.achtergrond }} {% if kolom.achtergrond != 'bg-transparent' %}p-4 {% endif %}">
 							<div data-mh>
 								{% if kolom.titel %}
-									<h3 class="mb-2 {% if kolom.achtergrond != 'bg-transparent' %}h4{% endif %}""> {{ kolom.titel }} </h3>
+									<h3 class="mb-2 text-greendark {% if kolom.achtergrond != 'bg-transparent' %}h4{% endif %}""> {{ kolom.titel }} </h3>
 								{% endif %}
 								{% if kolom.tekst %}
-									<p> {{ kolom.tekst }} </p>
+									{{ kolom.tekst }}
 								{% endif %}
 								{% if kolom.icoon %}
 									<br>
@@ -37,6 +39,27 @@
 									{% endfor %} 
 									</div>
 								{% endif %}
+								{% if kolom.sliderblok %}
+									<div class="card bg-greylight">
+										<div class="card-body p-4">
+											<div class="js-slick-sliderblok">
+												{% for slide in kolom.sliderblok %}
+													<div class="item text-center">
+														{% if slide.subtitel %}
+															<p class="date"> {{ slide.subtitel }} </p>
+														{% endif %}
+														{% if slide.titel %}
+															<h5 class="text-greendark"> {{ slide.titel }} </h5>
+														{% endif %}
+														{% if slide.tekst %}
+															{{ slide.tekst }}
+														{% endif %}
+													</div>
+												{% endfor %}
+											</div>
+										</div>
+									</div>
+								{% endif %}
 								<br>
 							</div>
 							{% if kolom.link %}
@@ -44,23 +67,6 @@
 							{% endif %}
 							{% if kolom.download %}
 								<a class="btn btn-primary" href="{{ kolom.download.url }}" target="{{ kolom.download.target }}"><i class="fas fa-download"></i> {{ kolom.download.title }} </a>
-							{% endif %}
-							{% if kolom.sliderblok %}
-								<div class="js-slick-sliderblok">
-									{% for slide in kolom.sliderblok %}
-										<div class="item text-center">
-											{% if slide.subtitel %}
-												<p> {{ slide.subtitel }} </p>
-											{% endif %}
-											{% if slide.titel %}
-												<h5> {{ slide.titel }} </h5>
-											{% endif %}
-											{% if slide.tekst %}
-												<p> {{ slide.tekst }} </p>
-											{% endif %}
-										</div>
-									{% endfor %}
-								</div>
 							{% endif %}
 						</div>
 					</div>

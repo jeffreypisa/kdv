@@ -6,7 +6,7 @@ section.bg-transparent + section.bg-transparent,
 section.bg-white + section.bg-white,
 section.bg-greylight + section.bg-greylight,
 section.bg-orange + section.bg-orange {
-	padding-top: 0 !important;
+	padding-top: 30px !important;
 	margin-top: -48px;
 }
 
@@ -31,6 +31,7 @@ section.bg-orange + section.bg-orange {
 	section.bg-white + section.bg-white,
 	section.bg-greylight + section.bg-greylight,
 	section.bg-orange + section.bg-orange {
+		padding-top: 35px !important;
 		margin-top: -50px;
 	}
 }

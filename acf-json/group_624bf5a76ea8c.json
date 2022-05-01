@@ -25,6 +25,27 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_6257e9dd004a8",
+            "label": "Positie",
+            "name": "positie",
+            "type": "number",
+            "instructions": "Positie van 1 tot 9 voor het onderdeel 'De 8 thema's van KDV'",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": 1,
+            "max": 9,
+            "step": 1
         }
     ],
     "location": [
@@ -45,5 +66,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1649243248
+    "modified": 1649928753
 }

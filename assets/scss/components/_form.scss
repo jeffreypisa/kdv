@@ -1,3 +1,7 @@
+body .nf-form-content {
+	padding: 0;
+}
+
 body .nf-form-content button, 
 body .nf-form-content input[type=button], 
 body .nf-form-content input[type=submit] {
@@ -9,8 +13,8 @@ body .nf-form-content input[type=submit] {
 body .nf-form-content .list-select-wrap .nf-field-element>div, 
 body .nf-form-content input:not([type=button]), 
 body .nf-form-content textarea {
-	background: #fff;
-	border-color: #fff;
+	background: $greylight;
+	border-color: $greylight;
 	border-radius: 8px;
 	&::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 		color: #9DC5C3;

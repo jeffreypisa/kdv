@@ -3,7 +3,10 @@
 		<div class="row">
 			<div class="col-md-10 offset-md-1 col-xl-8 offset-xl-2 text-center">
 				<br><br>
-				<h6 class="sub mb-0"> Aanpak </h6>
+				{% if item.subtitel %}
+					<h6 class="sub mb-0"> {{ item.subtitel }} </h6>
+				{% endif %}
+				
 				{% if item.titel %}
 					<h2> {{ item.titel }} </h2>
 				{% endif %}

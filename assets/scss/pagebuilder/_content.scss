@@ -1,4 +1,16 @@
 .mod-content {
+	h2, h3, h4, h5 {
+		color: $greendark;
+		margin-bottom: 15px;
+	}
+	p {
+		+ h2,
+		+ h3,
+		+ h4, 
+		+ h5 {
+			margin-top: 2rem;
+		}
+	}
 	img {
 		max-width: 100%;
 	}
@@ -10,6 +22,24 @@
 	}
 	.kolom {
 		border-radius: 0px 15px;
+		.date {
+			font-size: 14px;
+			color: $greendark;
+			text-transform: uppercase;
+			text-decoration: underline;
+			margin: 0 0 4px;
+		}
+		.slick-slider {
+			.slick-prev,
+			.slick-next {
+			}
+			.slick-prev {
+				left: 10px;
+			}
+			.slick-next {
+				right: 10px;
+			}
+		}
 	}
 }
 

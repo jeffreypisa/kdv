@@ -10,8 +10,8 @@
 		</div>
 	</div>
 	{% if categories %}
-	<div class="container">
-		<div class="tabs mb-5">
+	<div class="container"> 
+		<div class="tabs">
 			<ul class="row g-2 nav nav-pills mb-3" id="pills-tab" role="tablist">
 				<!--
 				 	<div class="col-sm-6 col-md-4 col-lg-3">
@@ -36,29 +36,67 @@
 
 
 		<div class="tab-pane fade  {% if loop.first %}show active{% endif %}" id="pills-{{ loop.index }}" role="tabpanel" aria-labelledby="pills-{{ loop.index }}-tab">
-			<div class="thatpartwrapper">
-				<div class="container">
-					<div class="thatpart">
-						<div class="about">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-9">
+						<div class="about d-lg-none">	
 							<div class="nr"> {{ loop.index }}.</div>
-							<h3> {{ item.title }}</h3>
+							<h3 class="mb-2"> {{ item.title }}</h3>
 							<p>{{ item.description }} </p>
 							<a href="/themas" class="btn btn-primary">Naar alle artikelen</a>
-						</div>
-						<div class="projects">
-							<h5> Projecten binnen dit thema </h5>
-							<ol class="greenlist">
-								{% for child in function('get_term_children', item.id, 'artikelen_themas') %}
-									{% set child = Term(child) %}
-									<li><a href="{{ child.title }}">{{ child.title }} </a>
-								{{ child.description }} {{ Image(child.afbeelding).src }}</li>
-								 {% endfor %}
-							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
-			<section class="moreposts">
+			<div class="thatpartwrapper">
+				{% for child in function('get_term_children', item.id, 'artikelen_themas') %}
+				{% set child = Term(child) %}
+					<div class="dot dot-{{ child.positie }}">
+						{{ loop.index }}
+					</div>
+				{% endfor %}
+				<div class="container">
+					<div class="thatpart">
+						<div class="about d-none d-lg-block">
+							<div class="nr"> {{ loop.index }}.</div>
+							<h3 class="mb-2"> {{ item.title }}</h3>
+							<p>{{ item.description }} </p>
+							<a href="/themas" class="btn btn-primary">Naar alle artikelen</a>
+						</div>
+						<div class="projects">
+							<div class="row">
+								<div class="col-md-6 col-lg-4 offset-lg-1">
+									<h5 class="mb-2"> Projecten binnen dit thema </h5>
+								</div>
+							</div>
+							{% for child in function('get_term_children', item.id, 'artikelen_themas') %}
+								{% set child = Term(child) %}
+								<div class="project">
+									<div class="row">
+										<div class="col-md-6 col-lg-4 offset-lg-1">
+											<a href="{{ child.title }}" class="btn-link weight-700">{{ loop.index }}. {{ child.title }} </a>
+										</div>
+										<div class="card-holder d-none d-md-block col-md-6 col-lg-7">
+											<div class="card card-term card-white">
+												<div class="row">
+													<div class="col-lg-6 d-none d-lg-block">
+														<div class="card-body">
+															<h5 class="text-darkgreen"> {{ child.title }}</h5>
+															{{ child.description }} 
+														</div>
+													</div>
+													<div class="col-lg-6 d-none d-sm-block bg-cover" style="background-image: url({{ Image(child.afbeelding).src }})"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							 {% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+			<section class="moreposts pb-0">
 				<div class="container-fluid container-lg">
 					<div class="row">
 						<div class="col-md-10 offset-md-1 text-center ">

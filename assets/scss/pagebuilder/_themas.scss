@@ -1,53 +1,135 @@
 .mod-themas {
+	.tabs {
+		margin-bottom: 60px;
+	}
 	.tab-content {
+		.about {
+			position: relative;
+			margin-bottom: -50px;
+			h3 {
+				padding-left: 60px;
+			}
+			.nr {
+				left: -6px;
+				top: -34px;
+				position: absolute;
+				font-size: 66px;
+				line-height: 66px;
+				font-weight: 700;
+				color: #000;
+		
+				&:after {
+					content: '';
+					position: absolute;
+					top: -45px;
+					left: -65px;
+					height: 160px;
+					width: 160px;
+					background: $yellow;
+					z-index: -1;
+					border-radius: 400px;
+				} 
+			}
+		}
 		.thatpartwrapper {
-
+			position: relative;
 			background: url(../img/union.svg);
 			background-size: 100%;
-			
+			.dot {
+				height: 46px;
+				width: 46px;
+				position: absolute;
+				top: 0;
+				left: 0;
+				margin-top: -23px;
+				margin-left: -23px;
+				background: $grey;
+				border-radius: 100px;
+				z-index: 2;
+				color: $dark;
+				font-size: 16px;
+				font-weight: 700;
+				line-height: 46px;
+				text-align:center;
+				&.active {
+					color: #fff;
+					background: $greendark;
+				}
+				&.dot-1 {
+					left: 10%;
+					top: 54%;
+				}
+				&.dot-2 {
+					left: 20%;
+					top: 53%;
+				}
+				&.dot-3 {
+					left: 30%;
+					top: 51%;
+				}
+				&.dot-4 {
+					left: 40%;
+					top: 48.5%;
+				}
+				&.dot-5 {
+					left: 50%;
+					top: 44%;
+				}
+				&.dot-6 {
+					left: 60%;
+					top: 38%;
+				}
+				&.dot-7 {
+					left: 70%;
+					top: 29.5%;
+				}
+				&.dot-8 {
+					left: 80%;
+					top: 18.1%;
+				}
+				&.dot-9 {
+					left: 90%;
+					top: 8%;
+				}
+			}
 			.thatpart {
 				position: relative;
-				padding-top: 80%;
-				.about {
-					padding-left: 80px;
-					position: absolute;
-					top: 0;
-					left: 0;
-					padding-top: 20px;
-
-					h3 {}
-
-					.nr {
-						left: -80px;
-						top: 0;
+				padding-top: 140%;
+			}
+			.projects {
+				position: absolute;
+				top: 60%;
+				left: 0;
+				right: 0;
+				.project {
+					.card-holder {
+						position:relative;
+					}
+					.card {
 						position: absolute;
-						font-size: 66px;
-						line-height: 66px;
-						font-weight: 700;
-						color: #000;
-
-						&:after {
-							content: '';
-							position: absolute;
-							top: -30px;
-							left: 0px;
-							height: 130px;
-							width: 130px;
-							background: $yellow;
-							z-index: -1;
-							border-radius: 400px;
-						}
 					}
 				}
 			}
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.mod-themas {
+		.tabs {
+			margin-bottom: 120px;
+		}
+		.tab-content {
+			.about {
+				margin-bottom: -200px;
+			}
+			.thatpart {
+				padding-top: 80%;
+			}
 			.projects {
-				.greenlist {
-					color: $greendark;
-					font-weight: 900;
-					a {
-						color: $greendark;
-						text-decoration: none;
-						font-weight: 900;
+				.card-term {
+					.bg-cover {
+						min-height: 200px
 					}
 				}
 			}
@@ -57,25 +139,49 @@
 
 @include media-breakpoint-up(lg) {
 	.mod-themas {
+		.tabs {
+			margin-bottom: 40px;
+		}
 		.tab-content {
+			.about {
+				margin: 0;
+				padding-left: 80px;
+				position: absolute;
+				top: 70px;
+				left: 0;
+				padding-top: 20px;
+				width: 50%;
+				left: 60px;
+				h3 {
+					padding: 0;
+				}
+				.nr {
+					top: 15px;
+					left: 0px;
+					font-size: 82px;
+					line-height: 82px;
+					
+					&:after {
+						width: 220px;
+						height: 220px;
+						left: -90px;
+						top: -65px;
+					}
+				}
+			}
 			.thatpartwrapper {
 				.thatpart {
-					.about {
-						width: 50%;
-						left: 60px;
-
-						.nr {
-							top: 15px;
-							left: 0px;
-							font-size: 82px;
-							line-height: 82px;
-
-							&:after {
-								width: 220px;
-								height: 220px;
-								left: -90px;
-								top: -65px;
-							}
+					padding-top: 0;
+					height: 1060px;
+				}
+				.projects {
+					position: absolute;
+					top: 63%;
+					left: 0;
+					right: 0;
+					.card-term {
+						.bg-cover {
+							min-height: 200px
 						}
 					}
 				}

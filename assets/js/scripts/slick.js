@@ -7,7 +7,7 @@ export function slick_init() {
 		infinite: true,
 		slidesToShow: 1,
 		slidesToScroll: 1,
-		arrows: false,
+		arrows: true,
 		dots: false,
 		centerMode: true,
 		fade: true,

@@ -1,10 +1,14 @@
 <section id="section{{ sectionno }}" class="mod-videos {{ item.achtergrond }}">
 	<div class="container">
-		<div class="row mb-5">
-			<div class="col-md-10 offset-md-1 col-xl-8 offset-xl-2 text-center">
+		<div class="row">
+			<div class="col-md-10 offset-md-1 text-center">
 				{% if item.titel %}
 					<h2> {{ item.titel }} </h2>
 				{% endif %}
+			</div>
+		</div>
+		<div class="row mb-5">
+			<div class="col-md-10 offset-md-1 col-xl-8 offset-xl-2 text-center">
 				{% if item.lead %}
 					<p> {{ item.lead }} </p>
 				{% endif %}

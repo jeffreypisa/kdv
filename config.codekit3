@@ -9,6 +9,14 @@
   ],
   "creatorBuild" : "34335",
   "files" : {
+    "\/.nova\/Publishing\/Emonks.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/.nova\/Publishing\/Emonks-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
     "\/404.php" : {
       "cB" : 0,
       "ft" : 8192,
@@ -506,7 +514,7 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
-    "\/assets\/img\/union.svg" : {
+    "\/assets\/img\/Union.svg" : {
       "ft" : 2097152,
       "miP" : 0,
       "oA" : 2,
@@ -1594,6 +1602,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/templates\/404.twig",
+      "oF" : 0
+    },
+    "\/templates\/archive-project.twig" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/templates\/archive-project.twig",
       "oF" : 0
     },
     "\/templates\/archive-themas.twig" : {

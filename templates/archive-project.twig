@@ -1,0 +1,25 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+		<section class="mod-archive logospacer">
+			<div class="container">
+				<div class="row text-center mb-5">
+					<div class="col-md-10 offset-md-1 ">
+						<h1 class="h2 mb-3 mt-3">{{ options.archief_project_titel }} <br> "{{ title }}"</h1>
+					</div>
+				</div>
+				
+				<div class="row mt-2 anime-fadein">
+					{% for item in posts %}
+						<div class="col-md-6 col-lg-4 mb-30">
+							{% include ['tease.twig'] %}
+						</div>
+					{% endfor %}
+				</div>
+	
+				{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+			</div>
+		</section>
+	</article>
+{% endblock %}
