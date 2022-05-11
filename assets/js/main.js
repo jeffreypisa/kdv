@@ -20,7 +20,6 @@ import { ubncheck } from './scripts/ubncheck.js';
 
 lity_init();
 rellax();
-ubncheck();
 
 $( document ).ready(function() {
 	footer_down();
@@ -29,6 +28,7 @@ $( document ).ready(function() {
 	scrollto();
 	sticky_header();
 	themas();
+	ubncheck();
 	
 	var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 	var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {

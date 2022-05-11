@@ -1,3 +1,22 @@
+#ubncheckform {
+	input[type=text] {
+		height: 42px;
+	}
+}
+#ubnoutput {
+	padding: 20px 0 0;
+	table {
+		tr {
+			padding: 4px 0;
+			td:first-child {
+				font-weight: 700;
+				color: $greendark;
+				padding-right: 10px;
+			}
+		}
+	}	
+}
+
 body .nf-form-content {
 	padding: 0;
 }
