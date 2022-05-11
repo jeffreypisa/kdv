@@ -4,56 +4,71 @@
 <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
     <section class="mod-archive logospacer">
         <div class="container">
-            <div class="row text-center mb-5">
+            <div class="row text-center">
                 <div class="col-md-10 offset-md-1 ">
                     <h1 class="h2 mb-3 mt-3">{{ options.archief_thema_titel }}</h1>
                 </div>
                 <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
                     <p class="mb-5">{{ options.archief_thema_tekst }}</p>
 
-                    <div class="mod-searchinput mb-4">
+                    <div class="mod-searchinput mb-2 mb-md-4">
                         <form role="search" method="get" id="searchform" action="{{ site.url }}">
                             <div class="form-group">
                                 <label class="d-none" for="s">Zoeken </label>
-                                <input class="form-control" type="text" value="" name="s" id="s" placeholder="{{ __('Typ je zoekwoord in', 'timber-foundation')|e }}">
+                                <input data-swplive="true" aria-controls=""class="form-control" type="text" value="" name="s" id="s" placeholder="{{ __('Typ je zoekwoord in', 'timber-foundation')|e }}">
                                 <div class="searchicon">
                                     <input type="submit" id="searchsubmit" value="{{ __('zoeken', 'timber-foundation')|e }}" />
                                     <i class="fas fa-search"></i>
                                 </div>
                             </div>
                         </form>
-
                     </div>
-       
                 </div>
             </div>
-                {% if categories %}
-                <div class="row g-2 mb-4">
+            {% if categories %}
+            
+            <div class="categories-mobile d-md-none">
+                <div class="mb-2 text-center"> of </div>
+                <div class="form-select-holder mb-5">
+                    <select class="form-select w-100" onchange="document.location.href = this.value">
+                        <option disabled selected> {{ options.selecteer_een_thema }} </option>
+                        {% for item in categories %}
+                            <option value="{{ item.link }}">{{ item.title }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            
+            <div class="categories-desktop d-none d-md-block">
+                <div class="row g-2 mb-4 mt-5">
                     <!--
                          <div class="col-sm-6 col-md-4 col-lg-3">
                             <a href="/themas" class="btn btn-secondary btn-block w-100 mb-4 {% if current_category == '' %} active {% endif %}">Themas</a>
                          </div>
                       -->
-
+    
                     {% for item in categories %}
                     <div class="col-sm-6 col-md-4 col-lg-3">
-                        <a href="{{ item.link }}" class="btn btn-secondary w-100 mb-4 {% if item.id == current_category %} active {% endif %}">{{ item.title }}</a>
+                        <a href="{{ item.link }}" class="btn btn-secondary w-100 mb-2 {% if item.id == current_category %} active {% endif %}">{{ item.title }}</a>
                     </div>
                     {% endfor %}
                 </div>
-                {% endif %}
+            </div>
+            {% endif %}
 
-                <div class="row mt-2 anime-fadein">
-                    {% for item in posts %}
-
-                    <div class="col-md-6 col-lg-4 mb-30">
+            <div class="row mt-2 anime-fadein">
+                {% for item in posts %}
+                    <div class="col-md-6 col-lg-4 mb-30 hider {% if loop.index > 0 and loop.index < 7 %}show{% endif %}">
                         {% include ['tease.twig'] %}
                     </div>
-                    {% endfor %}
-                </div>
-
-                {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+                {% endfor %}
             </div>
+            
+            <div class="text-center mt-4 mb-5">
+                <button class="btn btn-primary js-laadmeer"> Laad meer </button>
+            </div>
+            
+        </div>
     </section>
 </article>
 {% endblock %}

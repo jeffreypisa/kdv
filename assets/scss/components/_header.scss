@@ -58,7 +58,7 @@ header {
 					font-size: 14px;
 					padding: 8px 2px;
 					&:hover {
-						color: $orange;
+						color: $greenlight;
 					}
 					&:after {
 						content: '';
@@ -120,6 +120,58 @@ header {
 		.service {
 			border-left: 1px solid $greendark;
 			padding-left: 30px;
+			.landen-switch {
+				position: relative;
+				display: inline-block;
+				margin-left: 15px;
+				.switcher {
+					padding: 6px;
+					cursor: pointer;
+					position: relative;
+					&:after {
+						content: '';
+						position: absolute;
+						right: -8px;
+						top: 17px;
+						width: 0;
+						height: 0;
+						border-left: 5px solid transparent;
+						border-right: 5px solid transparent;
+						border-top: 6px solid #999;
+					}
+					&:hover {
+						.drop-down-holder {
+							display: block;
+						}
+					}
+					.drop-down-holder {
+						display: none;
+						position: absolute;
+						height: 42px;
+						top: 0px;
+						min-height: 60px;
+						left: 50%;
+						transform: translateX(-50%);
+						display: none;
+						padding-top: 50px;
+						ul {
+							margin: 0;
+							li {
+								margin: 2px 0;
+							}
+						}
+						.drop-down {
+							background: #fff;
+							padding: 10px 15px;
+							box-shadow: $box-shadow;
+							img {
+								width: 30px;
+								height: 20px;
+							}
+						}
+					}
+				}
+			}
 		}
 		&.text-white .service {
 			border-color: #fff;

@@ -22,6 +22,25 @@
             "new_lines": ""
         },
         {
+            "key": "field_627bd35358754",
+            "label": "Partner titel",
+            "name": "partner_titel",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_624aff509b435",
             "label": "Partner",
             "name": "partner",
@@ -81,5 +100,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1649768280
+    "modified": 1652282211
 }

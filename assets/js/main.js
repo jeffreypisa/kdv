@@ -1,5 +1,5 @@
 import $ from "jquery";
-import 'bootstrap';
+import bootstrap from 'bootstrap/dist/js/bootstrap.bundle';
 
 // Init plugins
 import { slick_init } from './scripts/slick.js';
@@ -14,9 +14,13 @@ import { footer_down } from './scripts/footer_down.js';
 import { mobilemenu } from './scripts/mobilemenu.js';
 import { sticky_header } from './scripts/sticky_header.js';
 import { scrollto } from './scripts/scrollto.js';
+import { themas } from './scripts/themas.js';
+import { ubncheck } from './scripts/ubncheck.js';
+
 
 lity_init();
 rellax();
+ubncheck();
 
 $( document ).ready(function() {
 	footer_down();
@@ -24,6 +28,37 @@ $( document ).ready(function() {
 	slick_init();
 	scrollto();
 	sticky_header();
+	themas();
+	
+	var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+	var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+	  return new bootstrap.Tooltip(tooltipTriggerEl)
+	});
+	
+	var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+	var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+	  return new bootstrap.Popover(popoverTriggerEl)
+	});
+	
+	var triggerTabList = [].slice.call(document.querySelectorAll('#pills button'))
+	triggerTabList.forEach(function (triggerEl) {
+	  var tabTrigger = new bootstrap.Tab(triggerEl)
+	
+	  triggerEl.addEventListener('click', function (event) {
+		event.preventDefault()
+		tabTrigger.show()
+	  })
+	})
+	
+	// bootnavslec
+	$('.js-selecttabtoggle').on('change', function () {
+		
+	 var triggerEl = document.querySelector('#pills button[data-bs-target="' + this.value + '"]')
+	 bootstrap.Tab.getInstance(triggerEl).show() // Select tab by name
+	});
+	
+	
+		
 });
 
 $(window).on('load', function() {

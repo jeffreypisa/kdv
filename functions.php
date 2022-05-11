@@ -13,4 +13,5 @@ include 'lib/timber.php';
 include 'lib/videoembed.php';
 include 'lib/wpadmin.php';
 include 'lib/permalinks.php';
+include 'lib/loadmoreposts.php';
 // include 'lib/listallcats.php';

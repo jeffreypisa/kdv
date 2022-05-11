@@ -15,6 +15,28 @@
 						{% if options.header_link %}
 							<a class="btn btn-primary" href="{{ options.header_link.url }}" target="{{ options.header_link.target }}">{{ options.header_link.title }}</a>
 						{% endif %}
+						{% if options.landen %}
+							<div class="landen-switch">
+								<div class="switcher">
+									{% for land in options.landen %}
+										{% if land.actief %} <img src="{{ Image(land.vlag).src }}" class="vlag w-auto" height="20"> {% endif %}
+									{% endfor %}
+									<div class="drop-down-holder">
+										<div class="drop-down">
+											<ul class="list-unstyled">
+												{% for land in options.landen %}
+													<li>
+														<a href="{{ land.link.url }}">
+															<img src="{{ Image(land.vlag).src }}" class="vlag" height="20"> 
+														</a>
+													</li>
+												{% endfor %}
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						{% endif %}
 					</div>
 				</div>
 			{% endif %}

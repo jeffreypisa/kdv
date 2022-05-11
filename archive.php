@@ -16,27 +16,39 @@
 
 $context = Timber::get_context();
  
- $post = new TimberPost();
- $context['post'] = $post;
- 
- /* Load categories */
- $postcatid = get_queried_object()->term_id;
- $context['current_category'] = $postcatid;
- 
- $term = get_queried_object();
- $parent = ( isset( $term->parent ) ) ? get_term_by( 'id', $term->parent, 'artikelen_themas' ) : false;
+$post = new TimberPost();
+$context['post'] = $post;
 
- 
- $context['posts'] = Timber::get_posts();
+/* Load categories */
+$postcatid = get_queried_object()->term_id;
+$context['current_category'] = $postcatid;
+
+$term = get_queried_object();
+$parent = ( isset( $term->parent ) ) ? get_term_by( 'id', $term->parent, 'artikelen_themas' ) : false;
+
+global $paged;
+if (!isset($paged) || !$paged){
+    $paged = 1;
+}
+
+$args_cp = array(
+    'post_type' => 'artikelen',
+    'posts_per_page' => 9,
+    'paged' => $paged
+);
+
+$context['posts'] = new Timber\PostQuery($args_cp);
      
 if( $parent ) {
-     $context['title'] = get_queried_object()->name;
-     
-     Timber::render( array( 'archive-project.twig' ), $context );
+    $context['title'] = get_queried_object()->name;
+    
+    Timber::render( array( 'archive-project.twig' ), $context );
+    
 } else {
     $terms = \Timber::get_terms(array('taxonomy' => 'artikelen_themas', 'hide_empty' => true, 'parent' => 0));
-     $context['categories'] = $terms;
-     $context['search'] = get_search_query();
-     Timber::render( array( 'archive-themas.twig' ), $context );
+    $context['categories'] = $terms;
+    $context['search'] = get_search_query();
+    
+    Timber::render( array( 'archive-themas.twig' ), $context );
 
 }

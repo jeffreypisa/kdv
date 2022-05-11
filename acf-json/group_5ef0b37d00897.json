@@ -53,6 +53,25 @@
             "button_label": "Nieuw land",
             "sub_fields": [
                 {
+                    "key": "field_62714d6a8285a",
+                    "label": "Huidige taal",
+                    "name": "actief",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
                     "key": "field_62545f857c8be",
                     "label": "Land",
                     "name": "land",
@@ -312,6 +331,25 @@
             "maxlength": ""
         },
         {
+            "key": "field_627bcb6d40db8",
+            "label": "Selecteer een thema",
+            "name": "selecteer_een_thema",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5f0ef4188e189",
             "label": "404",
             "name": "",
@@ -427,5 +465,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1649702772
+    "modified": 1652280188
 }

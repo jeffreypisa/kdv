@@ -16,6 +16,13 @@
 		</div>
 		{% for video in item.videos %}
 			<div class="row mb-5">
+				<div class="col-md-8 {% if loop.index is even %} {% else %} order-md-last {% endif %}">
+					{% if video.vimeo %}
+						<div class="video-container mb-4 md-mb-0">
+							{{ video.vimeo }}
+						</div>
+					{% endif %}
+				</div>
 				<div class="col-md-4">
 					{% if video.titel %}
 						<h3 class="h4 text-greendark"> {{ video.titel }} </h3>
@@ -24,13 +31,7 @@
 						<p> {{ video.tekst }} </p>
 					{% endif %}
 				</div>
-				<div class="col-md-8 {% if loop.index is even %} order-first {% endif %}">
-					{% if video.vimeo %}
-						<div class="video-container">
-							{{ video.vimeo }}
-						</div>
-					{% endif %}
-				</div>
+				
 			</div>
 		{% endfor %}
 	</div>

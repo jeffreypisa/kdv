@@ -1,6 +1,6 @@
 <section id="section{{ sectionno }}" class="mod-themas bg-transparent logospacer">
 	<div class="container">
-		<div class="row text-center mb-5">
+		<div class="row text-center mb-2 mb-md-5">
 			<div class="col-md-10 offset-md-1 ">
 				<h1 class="h2 mb-3 mt-3">{{ item.titel }}</h1>
 			</div>
@@ -11,7 +11,18 @@
 	</div>
 	{% if categories %}
 	<div class="container"> 
-		<div class="tabs">
+		
+		<div class="form-select-holder mb-5 d-md-none">
+			<select class="js-selecttabtoggle form-select w-100">
+				<option disabled selected> {{ options.selecteer_een_thema }} </option>
+				{% for item in categories %}
+					<option value="#pills-{{ loop.index }}">{{ item.title }}</option>
+				{% endfor %}
+			</select>
+			<br><br><br>
+		</div>
+		
+		<div id="pills" class="tabs d-none d-md-block">
 			<ul class="row g-2 nav nav-pills mb-3" id="pills-tab" role="tablist">
 				<!--
 				 	<div class="col-sm-6 col-md-4 col-lg-3">
@@ -43,7 +54,7 @@
 							<div class="nr"> {{ loop.index }}.</div>
 							<h3 class="mb-2"> {{ item.title }}</h3>
 							<p>{{ item.description }} </p>
-							<a href="/themas" class="btn btn-primary">Naar alle artikelen</a>
+							<a href="{{ item.link }}" class="btn btn-primary">Naar alle artikelen</a>
 						</div>
 					</div>
 				</div>
@@ -51,19 +62,20 @@
 			<div class="thatpartwrapper">
 				{% for child in function('get_term_children', item.id, 'artikelen_themas') %}
 				{% set child = Term(child) %}
-					<div class="dot dot-{{ child.positie }}">
+					<a class="dot dot-{{ child.positie }} {% if loop.first %}active {% endif %}js-showproject" data-index="{{ loop.index }}">
 						{{ loop.index }}
-					</div>
+					</a>
 				{% endfor %}
+				
 				<div class="container">
 					<div class="thatpart">
 						<div class="about d-none d-lg-block">
 							<div class="nr"> {{ loop.index }}.</div>
 							<h3 class="mb-2"> {{ item.title }}</h3>
 							<p>{{ item.description }} </p>
-							<a href="/themas" class="btn btn-primary">Naar alle artikelen</a>
+							<a href="{{ item.link }}" class="btn btn-primary">Naar alle artikelen</a>
 						</div>
-						<div class="projects">
+						<div class="projects mt-4 mb-mt-0">
 							<div class="row">
 								<div class="col-md-6 col-lg-4 offset-lg-1">
 									<h5 class="mb-2"> Projecten binnen dit thema </h5>
@@ -73,47 +85,55 @@
 								{% set child = Term(child) %}
 								<div class="project">
 									<div class="row">
-										<div class="col-md-6 col-lg-4 offset-lg-1">
-											<a href="{{ child.title }}" class="btn-link weight-700">{{ loop.index }}. {{ child.title }} </a>
+										<div class="col-md-6 col-lg-4 offset-lg-1 d-none d-md-inline-block">
+											<a class="btn-link weight-700 js-showproject" data-index="{{ loop.index }}">{{ loop.index }}. {{ child.title }} </a>
+										</div>
+										<div class="col-md-6 col-lg-4 offset-lg-1 d-md-none">
+											<a class="btn-link weight-700 js-showproject" href="{{ child.link }}">{{ loop.index }}. {{ child.title }} </a>
 										</div>
 										<div class="card-holder d-none d-md-block col-md-6 col-lg-7">
-											<div class="card card-term card-white">
-												<div class="row">
-													<div class="col-lg-6 d-none d-lg-block">
+											<div class="card card-term card-white {% if loop.first %}show{% endif %}" data-index="{{ loop.index }}">
+												<div class="row g-0">
+													<div class="col-lg-6 d-none d-md-block">
 														<div class="card-body">
 															<h5 class="text-darkgreen"> {{ child.title }}</h5>
 															{{ child.description }} 
+															<div class="clearfix"></div>
+															<br>
+															<a href="{{ child.link }}" class="btn btn-primary">naar project</a>
 														</div>
 													</div>
-													<div class="col-lg-6 d-none d-sm-block bg-cover" style="background-image: url({{ Image(child.afbeelding).src }})"></div>
+													<div class="col-lg-6 d-none d-sm-block bg-cover order-first order-lg-last" style="background-image: url({{ Image(child.afbeelding).src }})"></div>
 												</div>
 											</div>
 										</div>
 									</div>
 								</div>
-							 {% endfor %}
+							{% endfor %}
 						</div>
 					</div>
 				</div>
 			</div>
-			<section class="moreposts pb-0">
-				<div class="container-fluid container-lg">
-					<div class="row">
-						<div class="col-md-10 offset-md-1 text-center ">
-							<h3 class="mb-5"> Meer nieuws over {{ item.title }} </h3>
-						</div>
-					</div>
-					{% if artikelen|length > 1 %}
+			{% if item.posts|length > 1 %}
+				<section class="moreposts pb-0">
+					<div class="container-fluid container-lg">
 						<div class="row">
-							{% for item in artikelen|slice(0,3) %}
+							<div class="col-md-10 offset-md-1 text-center ">
+								<h3 class="mb-5"> Meer nieuws over {{ item.title }} </h3>
+							</div>
+						</div>
+						
+						<div class="row">
+							{% for item in item.posts|slice(0,3) %}
 								<div class="col-md-6 col-lg-4 mb-30 {% if loop.index == 3 %}d-none d-md-block{% endif %} {% if loop.index == 4 %}d-none d-md-block d-lg-none{% endif %}">
 									{% include 'tease.twig' %}
 								</div>
 							{% endfor %}
 						</div>
-					{% endif %}
-				</div>
-			</section>
+						
+					</div>
+				</section>
+			{% endif %}
 		</div>
 		
 		{% endfor %}

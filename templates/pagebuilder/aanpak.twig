@@ -35,10 +35,12 @@
 		<div class="image-holder">
 			<div class="image" style="background-image: url({{ Image(item.afbeelding).src }})"></div>
 		</div>
-		<div class="dots">
-			<a class="dot dot-1" data-bs-toggle="popover" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?"> </a>
-			<a class="dot dot-2" data-bs-toggle="popover" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?"> </a>
-			<a class="dot dot-3" data-bs-toggle="popover" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?"> </a>
-		</div>
+		{% if item.dots %}
+			<div class="dots">
+				{% for dot in item.dots %}
+					<a class="dot dot-{{ loop.index }}" data-bs-toggle="popover" data-bs-trigger="hover" title="{{ dot.titel }}" data-bs-content="{{ dot.tekst }}"> </a>
+				{% endfor %}
+			</div>
+		{% endif %}
 	</div>
 </section>

@@ -13,20 +13,19 @@
 
 body .mod-mobilemenu {
 	position: fixed;
-	top: 0;
+	left: 0;
 	bottom: 0;
 	right: 0;
-	width: calc(100vw - 130px);
-	padding: 120px 0px 30px;
+	padding: 60px 0px 40px;
 	transition: 0.3s ease-in-out;
 	background: $green;
 	overflow-y: scroll;
 	/* has to be scroll, not auto */
 	-webkit-overflow-scrolling: touch;
-	transform: translateX(calc(100% + 1px));
+	transform: translateY(calc(100% + 1px));
 	box-shadow: 0px 0px 10px rgba($dark, 0.0);
 	z-index: 100;
-	
+	border-radius: 0px 15px;
 	.closemenu {
 		margin-bottom: 30px;
 		display: block;
@@ -55,11 +54,12 @@ body .mod-mobilemenu {
 		position: relative;
 		padding-top: 40px;
 		margin-top: 10px;
+		padding-right: 80px;
 		&:after {
 			position: absolute;
 			top: 0;
 			right: 0;
-			width: 110px;
+			left: 0;
 			border: 1px dashed #FFFFFF;
 			content: '';
 		}
@@ -76,7 +76,6 @@ body .mod-mobilemenu {
 
 			li {
 				opacity: 0;
-				transform: translateX(-120px);
 				transition: 0.3s ease-in-out;
 
 				a {
@@ -135,14 +134,11 @@ body .mod-mobilemenu {
 
 body.opensidemenu {
 	.mod-mobilemenu {
-		top: 0;
-		bottom: 0;
 		transform: translateX(0);
 		box-shadow: 0px 0px 10px rgba($dark, 0.3);
 		ul {
 			li {
 				opacity: 1;
-				transform: translateX(0);
 				transition-delay: .2s;
 			}
 		}
@@ -153,9 +149,44 @@ body.opensidemenu {
 	}
 }
 
+@include media-breakpoint-up(sm) {
+	body .mod-mobilemenu {
+		.service {
+			padding-right: 0;
+		}
+	}
+}
 @include media-breakpoint-up(md) {
 	body .mod-mobilemenu {
 		width: 50%;
+		position: fixed;
+		top: 0;
+		left: auto;
+		bottom: 0;
+		right: 0;
+		padding: 120px 0px 30px;
+		transition: 0.3s ease-in-out;
+		background: $green;
+		overflow-y: scroll;
+		/* has to be scroll, not auto */
+		-webkit-overflow-scrolling: touch;
+		transform: translateX(calc(100% + 1px));
+		box-shadow: 0px 0px 10px rgba($dark, 0.0);
+		z-index: 100;
+		border-radius: 0 0 0 15px;
+		.service {
+			&:after {
+				left: auto;
+				width: 110px;
+			}
+		}
+	}
+	body.opensidemenu {
+		.mod-mobilemenu {
+			top: 0;
+			bottom: 0;
+			transform: translateX(0);
+		}
 	}
 }
 

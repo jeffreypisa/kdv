@@ -656,6 +656,21 @@
                             "prepend": "",
                             "append": "",
                             "maxlength": ""
+                        },
+                        {
+                            "key": "field_627bac55eccf2",
+                            "label": "Bekijk alle thema's",
+                            "name": "bekijk_alle_themas",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
                         }
                     ],
                     "min": "",
@@ -1121,5 +1136,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1651413944
+    "modified": 1652272229
 }

@@ -12,13 +12,15 @@
 				
 				<div class="row mt-2 anime-fadein">
 					{% for item in posts %}
-						<div class="col-md-6 col-lg-4 mb-30">
+						<div class="col-md-6 col-lg-4 mb-30 hider {% if loop.index > 0 and loop.index < 7 %}show{% endif %}">
 							{% include ['tease.twig'] %}
 						</div>
 					{% endfor %}
 				</div>
 	
-				{% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+				<div class="text-center mt-4 mb-5">
+					<button class="btn btn-primary js-laadmeer"> Laad meer </button>
+				</div>
 			</div>
 		</section>
 	</article>

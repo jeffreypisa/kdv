@@ -1,5 +1,5 @@
 .mod-content {
-	h2, h3, h4, h5 {
+	h3, h4, h5 {
 		color: $greendark;
 		margin-bottom: 15px;
 	}
@@ -13,12 +13,19 @@
 	}
 	img {
 		max-width: 100%;
+		height: auto;
 	}
 	img.size-full {
 		width: 100%;
 		max-width: 100%;
 		height: auto;
 		margin: 0 0 10px 0;
+	}
+	figcaption {
+		text-align: center;
+		font-size: 14px;
+		line-height: 24px;
+		font-style: italic;
 	}
 	.kolom {
 		border-radius: 0px 15px;

@@ -5,7 +5,6 @@
 				{% if item.subtitel %}
 					<h6 class="sub mb-1"> {{ item.subtitel }} </h6>
 				{% endif %}
-				
 				{% if item.titel %}
 					<h2 class="mb-5"> {{ item.titel }} </h2>
 				{% endif %}
@@ -44,9 +43,12 @@
 						<h3 class="h4 mb-3"> {{ item.themas_titel }}</h3>				
 						{% for item in themas %}
 							<div class="w-100">
-								<a href="{{ item.link }}" class="btn btn-light mb-3">{{ item.title }}</a>
+								<a href="{{ item.link }}" class="btn btn-light mb-1">{{ item.title }}</a>
 							</div>
-						{% endfor %}				
+						{% endfor %}	
+						{% if item.bekijk_alle_themas %}
+							<a class="btn-link btn-link-next" href="{{ item.bekijk_alle_themas.url }}" target="{{ item.bekijk_alle_themas.target }}">{{ item.bekijk_alle_themas.title }}</a>
+						{% endif %}	
 					</div>
 				</div>
 			</div>

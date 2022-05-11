@@ -2,42 +2,46 @@
 
 {% block content %}
 <article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-  <section class="mod-archive logospacer">
-    <div class="container">
-      <div class="row text-center mb-5">
-        <div class="col-md-10 offset-md-1 ">
-          <h1 class="h2 mb-5 mt-3">Zoekresultaten voor "{{ search }}"</h1>
-        </div>
-        <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+	<section class="mod-archive logospacer">
+		<div class="container">
+			<div class="row text-center mb-5">
+				<div class="col-md-10 offset-md-1 ">
+					<h1 class="h2 mb-5 mt-3">Zoekresultaten voor "{{ search }}"</h1>
+				</div>
+				<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
 
-          <div class="mod-searchinput mb-5">
+					<div class="mod-searchinput mb-5">
 
-            <form role="search" method="get" id="searchform" action="{{ site.url }}">
-              <div class="form-group">
-                <label class="d-none" for="s">Zoeken </label>
-                <input class="form-control" type="text" value="" name="s" id="s" placeholder="{{ __('Typ je zoekwoord in', 'timber-foundation')|e }}">
-                <div class="searchicon">
-                  <input type="submit" id="searchsubmit" value="{{ __('zoeken', 'timber-foundation')|e }}" />
-                  <i class="fas fa-search"></i>
-                </div>
-              </div>
-            </form>
+						<form role="search" method="get" id="searchform" action="{{ site.url }}">
+							<div class="form-group">
+								<label class="d-none" for="s">Zoeken </label>
+								<input data-swplive="true"  class="form-control" type="text" value="" name="s" id="s" placeholder="{{ __('Typ je zoekwoord in', 'timber-foundation')|e }}">
+								<div class="searchicon">
+									<input type="submit" id="searchsubmit"  value="{{ __('zoeken', 'timber-foundation')|e }}" />
+									<i class="fas fa-search"></i>
+								</div>
+							</div>
+						</form>
 
-          </div>
-     
-        </div>
+					</div>
 
-        <div class="row mt-2 anime-fadein">
-          {% for item in posts %}
+				</div>
+			</div>
 
-          <div class="col-md-6 col-lg-4 mb-30">
-            {% include ['tease.twig'] %}
-          </div>
-          {% endfor %}
-        </div>
 
-        {% include 'partial/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
-      </div>
-  </section>
+			<div class="row mt-2 anime-fadein">
+				{% for item in posts %}
+
+				<div class="col-md-6 col-lg-4 mb-30 hider {% if loop.index > 0 and loop.index < 7 %}show{% endif %}">
+					{% include ['tease.twig'] %}
+				</div>
+				{% endfor %}
+			</div>
+
+			<div class="text-center mt-4 mb-5">
+				<button class="btn btn-primary js-laadmeer"> Laad meer </button>
+			</div>
+		</div>
+	</section>
 </article>
 {% endblock %}

@@ -1,0 +1,8 @@
+.mod-archive {
+	.hider {
+		display: none;
+		&.show {
+			display: block;
+		}
+	}
+}

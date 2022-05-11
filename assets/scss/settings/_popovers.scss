@@ -1,0 +1,38 @@
+// Popovers
+
+// scss-docs-start popover-variables
+$popover-font-size:                 $font-size-base;
+$popover-bg:                        $greendark;
+$popover-max-width:                 276px ;
+$popover-border-width:              $border-width ;
+$popover-border-color:              rgba($black, .2) ;
+$popover-border-radius:             $border-radius-lg ;
+$popover-inner-border-radius:       subtract($popover-border-radius, $popover-border-width) ;
+$popover-box-shadow:                $box-shadow ;
+
+$popover-header-bg:                 $greendark;
+$popover-header-color:              #fff ;
+$popover-header-padding-y:          .5rem;
+$popover-header-padding-x:          $spacer ;
+
+$popover-body-color:                #fff ;
+$popover-body-padding-y:            $spacer ;
+$popover-body-padding-x:            $spacer ;
+
+$popover-arrow-width:               1rem ;
+$popover-arrow-height:              .5rem ;
+$popover-arrow-color:               $popover-bg ;
+
+$popover-arrow-outer-color:         fade-in($popover-border-color, .05) ;
+// scss-docs-end popover-variables
+
+.popover {
+	.popover-header {
+		text-align: center;
+		padding-top: .75rem;
+	}
+	.popover-body {
+		padding-top: 0;	
+		text-align: center;
+	}
+}

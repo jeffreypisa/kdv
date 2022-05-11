@@ -30,6 +30,7 @@ Theme by Emonks
 @import 'settings/effects';
 @import 'settings/nav';
 @import 'settings/form';
+@import 'settings/popovers';
 
 // Configuration
 @import "../node_modules/bootstrap/scss/root"; // Required
@@ -59,8 +60,8 @@ Theme by Emonks
 @import "../node_modules/bootstrap/scss/close";
 // @import "../node_modules/bootstrap/scss/toasts";
 @import "../node_modules/bootstrap/scss/modal"; // Requires transitions
-// @import "../node_modules/bootstrap/scss/tooltip";
-// @import "../node_modules/bootstrap/scss/popover";
+@import "../node_modules/bootstrap/scss/tooltip";
+@import "../node_modules/bootstrap/scss/popover";
 // @import "../node_modules/bootstrap/scss/carousel";
 @import "../node_modules/bootstrap/scss/spinners";
 @import "../node_modules/bootstrap/scss/offcanvas";
@@ -79,6 +80,7 @@ Theme by Emonks
 @import 'components/card';
 @import 'components/colors';
 @import 'components/buttons';
+@import 'components/archive';
 @import 'components/header';
 @import 'components/form';
 @import 'components/list';
@@ -103,4 +105,5 @@ Theme by Emonks
 @import 'pagebuilder/content';
 @import 'pagebuilder/themas';
 @import 'pagebuilder/banner';
+@import 'pagebuilder/artikelen';
 @import 'pagebuilder/aanpak';
