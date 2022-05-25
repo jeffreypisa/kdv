@@ -31,12 +31,13 @@
 			  	-->
 
 				{% for item in categories %}
-
+				{% if item.verbergen_in_website %} {% else %}
 				<li class="col-md-6 col-lg-3 nav-item" role="presentation">
 
 					<button class="btn btn-secondary w-100 {% if loop.first %}active{% endif %}" id="pills-{{ loop.index }}-tab" data-bs-toggle="pill" data-bs-target="#pills-{{ loop.index }}" type="button" role="tab" aria-controls="pills-{{ loop.index }}" aria-selected="true">{{ item.title }}</button>
 
 				</li>
+				{% endif %}
 				{% endfor %}
 			</ul>
 		</div>

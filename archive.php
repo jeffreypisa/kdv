@@ -31,10 +31,22 @@ if (!isset($paged) || !$paged){
     $paged = 1;
 }
 
+$qobj = get_queried_object();
+
 $args_cp = array(
     'post_type' => 'artikelen',
-    'posts_per_page' => 9,
-    'paged' => $paged
+    'posts_per_page' => -1,
+    'paged' => $paged,
+    'tax_query' => array(
+        array(
+          'taxonomy' => $qobj->taxonomy,
+          'field' => 'id',
+          'terms' => $qobj->term_id,
+    //    using a slug is also possible
+    //    'field' => 'slug', 
+    //    'terms' => $qobj->name
+        )
+      )
 );
 
 $context['posts'] = new Timber\PostQuery($args_cp);

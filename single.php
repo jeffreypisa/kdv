@@ -14,24 +14,19 @@ $timber_post     = Timber::get_post();
 $context['post'] = $timber_post;
 
 
-$terms = get_the_terms( $post->ID, 'artikelen_themas' );
-if ( !empty( $terms ) ){
-  // get the first term
-  $term = array_shift( $terms );
-  $term_id = $term->term_id;
-}
-
-$ancestors = get_ancestors( $term_id, 'artikelen_themas' ); // Get a list of ancestors
-$ancestors = array_reverse($ancestors); //Reverse the array to put the top level ancestor first
-$ancestors[0] ? $top_term_id = $ancestors[0] : $top_term_id = $term_id; //Check if there is an ancestor, else use id of current term
-$term = get_term( $top_term_id, 'artikelen_themas' ); //Get the term
-$top_term_id = $term->term_id;
+$terms = get_the_terms( $timber_post->ID , 'artikelen_themas' );
 
 $args = array(
   'post_type'			  => 'artikelen',
-  'post__not_in' => array( get_the_ID() ),
   'posts_per_page'  => 3,
-  'cat'     => $top_term_id
+  'tax_query' => array(
+      array(
+              'taxonomy' => 'artikelen_themas',
+              'field' => 'term_id',
+              'terms' => $terms[0]->term_taxonomy_id
+          )
+  ),
+  'post__not_in' => array( $timber_post->id ),
 );
     
 $context['artikelen'] = Timber::get_posts($args);

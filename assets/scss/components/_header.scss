@@ -19,11 +19,20 @@ header {
 	padding: 100px 0;
 	background: transparent;
 	z-index: 99;
+	&.text-white {
+		color: #fff;
+		a {
+			color: #fff;
+			&:hover, &:focus {
+				color: $greendark;
+			}
+		}
+	}
 	&.text-dark {
 		color: $greendark;
 		a {
 			color: $greendark;
-			&:hover {
+			&:hover, &:focus {
 				color: $greenlight;
 			}
 		}
@@ -213,6 +222,9 @@ header {
 				li {
 					a {
 						color: $greendark;
+						&:hover, &:focus {
+							color: $greenlight;
+						}
 					}
 				}
 			}

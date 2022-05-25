@@ -259,7 +259,7 @@
         },
         {
             "key": "field_625456cdd7eef",
-            "label": "Archief pagina's",
+            "label": "Artikel archief en single",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -334,6 +334,25 @@
             "key": "field_627bcb6d40db8",
             "label": "Selecteer een thema",
             "name": "selecteer_een_thema",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_628e12124179b",
+            "label": "Bekijk alle artikelen",
+            "name": "bekijk_alle_artikelen",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -465,5 +484,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1652280188
+    "modified": 1653478053
 }
