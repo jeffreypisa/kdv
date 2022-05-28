@@ -46,7 +46,6 @@
 
 		{% for item in categories %}
 
-
 		<div class="tab-pane fade  {% if loop.first %}show active{% endif %}" id="pills-{{ loop.index }}" role="tabpanel" aria-labelledby="pills-{{ loop.index }}-tab">
 			<div class="container">
 				<div class="row">
@@ -55,7 +54,7 @@
 							<div class="nr"> {{ loop.index }}.</div>
 							<h3 class="mb-2"> {{ item.title }}</h3>
 							<p>{{ item.description }} </p>
-							<a href="{{ item.link }}" class="btn btn-primary">Naar alle artikelen</a>
+							<a href="{{ item.link }}" class="btn btn-primary">{{ options.bekijk_alle_artikelen }}</a>
 						</div>
 					</div>
 				</div>
@@ -74,12 +73,12 @@
 							<div class="nr"> {{ loop.index }}.</div>
 							<h3 class="mb-2"> {{ item.title }}</h3>
 							<p>{{ item.description }} </p>
-							<a href="{{ item.link }}" class="btn btn-primary">Naar alle artikelen</a>
+							<a href="{{ item.link }}" class="btn btn-primary">{{ options.bekijk_alle_artikelen }}</a>
 						</div>
 						<div class="projects mt-4 mb-mt-0">
 							<div class="row">
 								<div class="col-md-6 col-lg-4 offset-lg-1">
-									<h5 class="mb-2"> Projecten binnen dit thema </h5>
+									<h5 class="mb-2"> {{ options.projecten_binnen_dit_thema }}</h5>
 								</div>
 							</div>
 							{% for child in function('get_term_children', item.id, 'artikelen_themas') %}
@@ -93,15 +92,17 @@
 											<a class="btn-link weight-700 js-showproject" href="{{ child.link }}">{{ loop.index }}. {{ child.title }} </a>
 										</div>
 										<div class="card-holder d-none d-md-block col-md-6 col-lg-7">
-											<div class="card card-term card-white {% if loop.first %}show{% endif %}" data-index="{{ loop.index }}">
+											<div class="card card-term card-white w-100 {% if loop.first %}show{% endif %}" data-index="{{ loop.index }}">
 												<div class="row g-0">
 													<div class="col-lg-6 d-none d-md-block">
 														<div class="card-body">
 															<h5 class="text-darkgreen"> {{ child.title }}</h5>
 															{{ child.description }} 
-															<div class="clearfix"></div>
-															<br>
-															<a href="{{ child.link }}" class="btn btn-primary">naar project</a>
+															{% if child.posts|length > 0 %}
+																<div class="clearfix"></div>
+																<br>
+																<a href="{{ child.link }}" class="btn btn-primary">{{ options.naar_project }}</a>
+															{% endif %}
 														</div>
 													</div>
 													<div class="col-lg-6 d-none d-sm-block bg-cover order-first order-lg-last" style="background-image: url({{ Image(child.afbeelding).src }})"></div>
@@ -120,7 +121,7 @@
 					<div class="container-fluid container-lg">
 						<div class="row">
 							<div class="col-md-10 offset-md-1 text-center ">
-								<h3 class="mb-5"> Meer nieuws over {{ item.title }} </h3>
+								<h3 class="mb-5"> {{ options.meer_nieuws_over }} {{ item.title }} </h3>
 							</div>
 						</div>
 						

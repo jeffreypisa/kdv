@@ -259,7 +259,7 @@
         },
         {
             "key": "field_625456cdd7eef",
-            "label": "Artikel archief en single",
+            "label": "Teksten",
             "name": "",
             "type": "tab",
             "instructions": "",
@@ -353,6 +353,63 @@
             "key": "field_628e12124179b",
             "label": "Bekijk alle artikelen",
             "name": "bekijk_alle_artikelen",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_62924ec1cebb9",
+            "label": "Projecten binnen dit thema",
+            "name": "projecten_binnen_dit_thema",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_62924f0bcebba",
+            "label": "Naar project",
+            "name": "naar_project",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_62924f25cebbb",
+            "label": "Meer nieuws over",
+            "name": "meer_nieuws_over",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -484,5 +541,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1653478053
+    "modified": 1653755752
 }
