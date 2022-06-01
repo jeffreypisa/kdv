@@ -17,6 +17,34 @@
 	}	
 }
 
+.bg-greylight {
+	.mc4wp-form {
+		input[type=text],
+		input[type=email] {
+			border-color: #fff;
+			background: #fff;
+		}
+	}
+}
+.mc4wp-form {
+	input[type=text],
+	input[type=email],
+	label {
+		width: 100%;
+	}
+	input[type=text],
+	input[type=email] {
+		@extend .form-control;
+		border-color: $greylight;
+		background: $greylight;
+	}
+	input[type=submit] {
+		@extend .btn;
+		@extend .btn-primary;
+	}
+}
+
+
 body .nf-form-content {
 	padding: 0;
 }

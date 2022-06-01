@@ -9,6 +9,18 @@
 		color: $greenlight;
 	}
 }
+
+.shareicons {
+	a {
+		&:after, &:before {
+			display: none;
+		}
+		text-decoration: none;
+		&:hover {
+			color: $greenlight;
+		}
+	}
+}
 .btn {
 	font-weight: 600;
 	line-height: 40px;

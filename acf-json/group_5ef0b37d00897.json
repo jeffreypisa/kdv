@@ -426,6 +426,25 @@
             "maxlength": ""
         },
         {
+            "key": "field_62974ae7aaa4a",
+            "label": "Deel dit artikel",
+            "name": "share",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5f0ef4188e189",
             "label": "404",
             "name": "",
@@ -541,5 +560,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1653755752
+    "modified": 1654082289
 }

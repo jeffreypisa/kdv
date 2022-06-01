@@ -17,6 +17,10 @@
 			{% endif %}
 		{% endfor %}
 		
+		{% if fn('is_single') %}
+			{% set headertextcolor = 'text-white' %}
+		{% endif %}
+		
 		{% block header %}
 			{% include 'header.twig' %}
 		{% endblock %}
