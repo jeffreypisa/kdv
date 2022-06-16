@@ -22,7 +22,7 @@ export function themas() {
 		var newItems = currentItems + 6;
 		
 		$('.hider').removeClass('show');
-		$(".hider").slice(0,newItems).addClass('show');
+		$(".hider").slice(0, newItems).addClass('show');
 		
 		MatchHeight.init();
 		

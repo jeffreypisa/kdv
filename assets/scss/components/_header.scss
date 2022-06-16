@@ -14,7 +14,7 @@ header {
 	left: 0;
 	right: 0;
 	z-index: 100;
-	transition: 1s $ease;
+	transition: transform 1s $ease;
 	height: 65px;
 	padding: 100px 0;
 	background: transparent;
@@ -192,6 +192,7 @@ header {
 			width: 150px;
 			background-size: contain;
 			background-repeat: no-repeat;
+			transform: none;
 		}
 		&.nav-up {
 			transform: translateY(-130px);

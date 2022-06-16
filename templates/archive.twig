@@ -14,7 +14,7 @@
                     <div class="mod-searchinput mb-2 mb-md-4">
                         <form role="search" method="get" id="searchform" action="{{ site.url }}">
                             <div class="form-group">
-                                <label class="d-none" for="s">Zoeken </label>
+                                <label class="d-none" for="s">{{ options.zoeken }} </label>
                                 <input data-swplive="true" aria-controls=""class="form-control" type="text" value="" name="s" id="s" placeholder="{{ __('Typ je zoekwoord in', 'timber-foundation')|e }}">
                                 <div class="searchicon">
                                     <input type="submit" id="searchsubmit" value="{{ __('zoeken', 'timber-foundation')|e }}" />
@@ -23,53 +23,67 @@
                             </div>
                         </form>
                     </div>
-                </div>
-            </div>
-            {% if categories %}
-            
-            <div class="categories-mobile d-md-none">
-                <div class="mb-2 text-center"> of </div>
-                <div class="form-select-holder mb-5">
-                    <select class="form-select w-100" onchange="document.location.href = this.value">
-                        <option disabled selected> {{ options.selecteer_een_thema }} </option>
-                        {% for item in categories %}
-                            <option value="{{ item.link }}">{{ item.title }}</option>
-                        {% endfor %}
-                    </select>
-                </div>
-            </div>
-            
-            <div class="categories-desktop d-none d-md-block">
-                <div class="row g-2 mb-4 mt-5">
-                    <!--
-                         <div class="col-sm-6 col-md-4 col-lg-3">
-                            <a href="/themas" class="btn btn-secondary btn-block w-100 mb-4 {% if current_category == '' %} active {% endif %}">Themas</a>
-                         </div>
-                      -->
-    
-                    {% for item in categories %}
-                        {% if item.verbergen_in_website %} {% else %}
-                            <div class="col-sm-6 col-md-4 col-lg-3">
-                                <a href="{{ item.link }}" class="btn btn-secondary w-100 mb-2 {% if item.id == current_category %} active {% endif %}">{{ item.title }}</a>
+                    {% if categories %}
+                        <div class="categories-mobile d-lg-none">
+                            <div class="mb-2 text-center"> {{ options.of }} </div>
+                            <div class="form-select-holder mb-5">
+                                <select class="form-select w-100" onchange="document.location.href = this.value">
+                                    <option disabled selected> {{ options.selecteer_een_thema }} </option>
+                                    <option value="/themas">{{ options.alle }}</option>
+                                    {% for item in categories %}
+                                        {% if item.verbergen_in_website %} {% else %}
+                                            <option value="{{ item.link }}">{{ item.title }}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
                             </div>
-                        {% endif %}
-                    {% endfor %}
+                        </div>
+                    {% endif %}
                 </div>
             </div>
-            {% endif %}
-
-            <div class="row mt-2 anime-fadein">
+            <div class="row mt-2 mt-lg-5 anime-fadein">
                 {% for item in posts %}
-                    <div class="col-md-6 col-lg-4 mb-30 hider {% if loop.index > 0 and loop.index < 7 %}show{% endif %}">
+                    {% if loop.index == 3 %}
+                        <div class="col-md-6 col-lg-4 mb-30 d-none d-lg-block">
+                            <div class="card bg-yellow mb-0" data-mh>
+                                <div class="card-body">
+                                    <h3 class="h4 mb-3"> {{ item.themas_titel }}</h3>	
+                                    <a href="/themas" class="btn btn-light mb-1 {% if current_category == '' %} btn-primary {% endif %}">{{ options.alle }}</a>	
+                                    {% for item in categories %}
+                                        <div class="w-100">
+                                            <a href="{{ item.link }}" class="btn btn-light mb-1 {% if item.id == current_category %} btn-primary {% endif %}">{{ item.title }}</a>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+                    <div class="col-md-6 col-lg-4 mb-30 hider {% if loop.index > 0 and loop.index < 6 %}show{% endif %}">
                         {% include ['tease.twig'] %}
-                    </div>
+                    </div>   
                 {% endfor %}
+                {% if posts|length == 1 or posts|length == 2 %}
+                    <div class="col-md-6 col-lg-4 mb-30 d-none d-lg-block">
+                        <div class="card bg-yellow mb-0" data-mh>
+                            <div class="card-body">
+                                <h3 class="h4 mb-3"> {{ item.themas_titel }}</h3>	
+                                <a href="/themas" class="btn btn-light mb-1 {% if current_category == '' %} btn-primary {% endif %}">{{ options.alle }}</a>	
+                                {% for item in categories %}
+                                    <div class="w-100">
+                                        <a href="{{ item.link }}" class="btn btn-light mb-1 {% if item.id == current_category %} btn-primary {% endif %}">{{ item.title }}</a>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
             </div>
             
-            <div class="text-center mt-4 mb-5">
-                <button class="btn btn-primary js-laadmeer"> Laad meer </button>
-            </div>
-            
+            {% if posts|length > 6 %}
+                <div class="text-center mt-4 mb-5">
+                    <button class="btn btn-primary js-laadmeer"> {{ options.laad_meer }} </button>
+                </div>
+            {% endif %}
         </div>
     </section>
 </article>

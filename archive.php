@@ -50,6 +50,14 @@ $args_cp = array(
 );
 
 $context['posts'] = new Timber\PostQuery($args_cp);
+
+$terms = \Timber::get_terms(array('taxonomy' => 'artikelen_themas', 'hide_empty' => true,  'parent' => 0));
+$context['themas'] = $terms;
+
+/* Load categories */
+
+$terms = \Timber::get_terms(array('taxonomy' => 'artikelen_themas', 'hide_empty' => true, 'parent' => 0));
+$context['categories'] = $terms;
      
 if( $parent ) {
     $context['title'] = get_queried_object()->name;

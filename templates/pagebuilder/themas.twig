@@ -10,136 +10,136 @@
 		</div>
 	</div>
 	{% if categories %}
-	<div class="container"> 
-		
-		<div class="form-select-holder mb-5 d-md-none">
-			<select class="js-selecttabtoggle form-select w-100">
-				<option disabled selected> {{ options.selecteer_een_thema }} </option>
-				{% for item in categories %}
-					<option value="#pills-{{ loop.index }}">{{ item.title }}</option>
-				{% endfor %}
-			</select>
-			<br><br><br>
+		<div class="container"> 
+			
+			<div class="form-select-holder mb-5 d-md-none">
+				<select class="js-selecttabtoggle form-select w-100">
+					<option disabled selected> {{ options.selecteer_een_thema }} </option>
+					{% for item in categories %}
+						<option value="#pills-{{ loop.index }}">{{ item.title }}</option>
+					{% endfor %}
+				</select>
+				<br><br><br>
+			</div>
+			
+			<div id="pills" class="tabs d-none d-md-block">
+				<ul class="row g-2 nav nav-pills mb-3" id="pills-tab" role="tablist">
+					<!--
+				 		<div class="col-sm-6 col-md-4 col-lg-3">
+							<a href="/themas" class="btn btn-secondary btn-block w-100 mb-4 {% if current_category == '' %} active {% endif %}">Themas</a>
+				 		</div>
+			  		-->
+	
+					{% for item in categories %}
+					{% if item.verbergen_in_website %} {% else %}
+					<li class="col-md-6 col-lg-3 nav-item" role="presentation">
+	
+						<button class="btn btn-secondary w-100 {% if loop.first %}active{% endif %}" id="pills-{{ loop.index }}-tab" data-bs-toggle="pill" data-bs-target="#pills-{{ loop.index }}" type="button" role="tab" aria-controls="pills-{{ loop.index }}" aria-selected="true">{{ item.title }}</button>
+	
+					</li>
+					{% endif %}
+					{% endfor %}
+				</ul>
+			</div>
 		</div>
-		
-		<div id="pills" class="tabs d-none d-md-block">
-			<ul class="row g-2 nav nav-pills mb-3" id="pills-tab" role="tablist">
-				<!--
-				 	<div class="col-sm-6 col-md-4 col-lg-3">
-						<a href="/themas" class="btn btn-secondary btn-block w-100 mb-4 {% if current_category == '' %} active {% endif %}">Themas</a>
-				 	</div>
-			  	-->
-
-				{% for item in categories %}
-				{% if item.verbergen_in_website %} {% else %}
-				<li class="col-md-6 col-lg-3 nav-item" role="presentation">
-
-					<button class="btn btn-secondary w-100 {% if loop.first %}active{% endif %}" id="pills-{{ loop.index }}-tab" data-bs-toggle="pill" data-bs-target="#pills-{{ loop.index }}" type="button" role="tab" aria-controls="pills-{{ loop.index }}" aria-selected="true">{{ item.title }}</button>
-
-				</li>
-				{% endif %}
-				{% endfor %}
-			</ul>
-		</div>
-	</div>
-	<div class="tab-content" id="pills-tabContent">
+		<div class="tab-content" id="pills-tabContent">
 
 		{% for item in categories %}
 
-		<div class="tab-pane fade  {% if loop.first %}show active{% endif %}" id="pills-{{ loop.index }}" role="tabpanel" aria-labelledby="pills-{{ loop.index }}-tab">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-9">
-						<div class="about d-lg-none">	
-							<div class="nr"> {{ loop.index }}.</div>
-							<h3 class="mb-2"> {{ item.title }}</h3>
-							<p>{{ item.description }} </p>
-							<a href="{{ item.link }}" class="btn btn-primary">{{ options.bekijk_alle_artikelen }}</a>
+			<div class="tab-pane fade  {% if loop.first %}show active{% endif %}" id="pills-{{ loop.index }}" role="tabpanel" aria-labelledby="pills-{{ loop.index }}-tab">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-9">
+							<div class="about d-lg-none">	
+								<div class="nr"> {{ loop.index }}.</div>
+								<h3 class="mb-2"> {{ item.title }}</h3>
+								<p>{{ item.description }} </p>
+								<a href="{{ item.link }}" class="btn btn-primary">{{ options.bekijk_alle_artikelen }}</a>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="thatpartwrapper">
-				{% for child in function('get_term_children', item.id, 'artikelen_themas') %}
-				{% set child = Term(child) %}
-					<a class="dot dot-{{ child.positie }} {% if loop.first %}active {% endif %}js-showproject" data-index="{{ loop.index }}">
-						{{ loop.index }}
-					</a>
-				{% endfor %}
-				
-				<div class="container">
-					<div class="thatpart">
-						<div class="about d-none d-lg-block">
-							<div class="nr"> {{ loop.index }}.</div>
-							<h3 class="mb-2"> {{ item.title }}</h3>
-							<p>{{ item.description }} </p>
-							<a href="{{ item.link }}" class="btn btn-primary">{{ options.bekijk_alle_artikelen }}</a>
-						</div>
-						<div class="projects mt-4 mb-mt-0">
-							<div class="row">
-								<div class="col-md-6 col-lg-4 offset-lg-1">
-									<h5 class="mb-2"> {{ options.projecten_binnen_dit_thema }}</h5>
-								</div>
+				<div class="thatpartwrapper">
+					{% for child in function('get_term_children', item.id, 'artikelen_themas') %}
+					{% set child = Term(child) %}
+						<a class="dot dot-{{ child.positie }} {% if loop.first %}active {% endif %}js-showproject {% if child.posts|length == 0 %}d-none d-md-block{% endif %}" data-index="{{ loop.index }}">
+							{{ loop.index }}
+						</a>
+					{% endfor %}
+					
+					<div class="container">
+						<div class="thatpart">
+							<div class="about d-none d-lg-block">
+								<div class="nr"> {{ loop.index }}.</div>
+								<h3 class="mb-2"> {{ item.title }}</h3>
+								<p>{{ item.description }} </p>
+								<a href="{{ item.link }}" class="btn btn-primary">{{ options.bekijk_alle_artikelen }}</a>
 							</div>
-							{% for child in function('get_term_children', item.id, 'artikelen_themas') %}
-								{% set child = Term(child) %}
-								<div class="project">
-									<div class="row">
-										<div class="col-md-6 col-lg-4 offset-lg-1 d-none d-md-inline-block">
-											<a class="btn-link weight-700 js-showproject" data-index="{{ loop.index }}">{{ loop.index }}. {{ child.title }} </a>
-										</div>
-										<div class="col-md-6 col-lg-4 offset-lg-1 d-md-none">
-											<a class="btn-link weight-700 js-showproject" href="{{ child.link }}">{{ loop.index }}. {{ child.title }} </a>
-										</div>
-										<div class="card-holder d-none d-md-block col-md-6 col-lg-7">
-											<div class="card card-term card-white w-100 {% if loop.first %}show{% endif %}" data-index="{{ loop.index }}">
-												<div class="row g-0">
-													<div class="col-lg-6 d-none d-md-block">
-														<div class="card-body">
-															<h5 class="text-darkgreen"> {{ child.title }}</h5>
-															{{ child.description }} 
-															{% if child.posts|length > 0 %}
-																<div class="clearfix"></div>
-																<br>
-																<a href="{{ child.link }}" class="btn btn-primary">{{ options.naar_project }}</a>
-															{% endif %}
+							<div class="projects mt-4 mb-mt-0">
+								<div class="row">
+									<div class="col-md-6 col-lg-4 offset-lg-1">
+										<h5 class="mb-2"> {{ options.projecten_binnen_dit_thema }}</h5>
+									</div>
+								</div>
+								{% for child in function('get_term_children', item.id, 'artikelen_themas') %}
+									{% set child = Term(child) %}
+									<div class="project {% if child.posts|length == 0 %}d-none d-md-block{% endif %}">
+										<div class="row">
+											<div class="col-md-6 col-lg-4 offset-lg-1 d-none d-md-inline-block">
+												<a class="btn-link weight-700 js-showproject" data-index="{{ loop.index }}">{{ loop.index }}. {{ child.title }} </a>
+											</div>
+											<div class="col-md-6 col-lg-4 offset-lg-1 d-md-none">
+												<a class="btn-link weight-700 js-showproject" href="{{ child.link }}">{{ loop.index }}. {{ child.title }} </a>
+											</div>
+											<div class="card-holder d-none d-md-block col-md-6 col-lg-7">
+												<div class="card card-term card-white w-100 {% if loop.first %}show{% endif %}" data-index="{{ loop.index }}">
+													<div class="row g-0">
+														<div class="col-lg-6 d-none d-md-block">
+															<div class="card-body">
+																<h5 class="text-darkgreen"> {{ child.title }}</h5>
+																{{ child.description }} 
+																{% if child.posts|length > 0 %}
+																	<div class="clearfix"></div>
+																	<br>
+																	<a href="{{ child.link }}" class="btn btn-primary">{{ options.naar_project }}</a>
+																{% endif %}
+															</div>
 														</div>
+														<div class="col-lg-6 d-none d-sm-block bg-cover order-first order-lg-last" style="background-image: url({{ Image(child.afbeelding).src }})"></div>
 													</div>
-													<div class="col-lg-6 d-none d-sm-block bg-cover order-first order-lg-last" style="background-image: url({{ Image(child.afbeelding).src }})"></div>
 												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-							{% endfor %}
+								{% endfor %}
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			{% if item.posts|length > 1 %}
-				<section class="moreposts pb-0">
-					<div class="container-fluid container-lg">
-						<div class="row">
-							<div class="col-md-10 offset-md-1 text-center ">
-								<h3 class="mb-5"> {{ options.meer_nieuws_over }} {{ item.title }} </h3>
-							</div>
-						</div>
-						
-						<div class="row">
-							{% for item in item.posts|slice(0,3) %}
-								<div class="col-md-6 col-lg-4 mb-30 {% if loop.index == 3 %}d-none d-md-block{% endif %} {% if loop.index == 4 %}d-none d-md-block d-lg-none{% endif %}">
-									{% include 'tease.twig' %}
+				{% if item.posts|length > 1 %}
+					<section class="moreposts pb-0">
+						<div class="container-fluid container-lg">
+							<div class="row">
+								<div class="col-md-10 offset-md-1 text-center ">
+									<h3 class="mb-5"> {{ options.meer_nieuws_over }} {{ item.title }} </h3>
 								</div>
-							{% endfor %}
+							</div>
+							
+							<div class="row">
+								{% for item in item.posts|slice(0,3) %}
+									<div class="col-md-6 col-lg-4 mb-30 {% if loop.index == 3 %}d-none d-md-block{% endif %} {% if loop.index == 4 %}d-none d-md-block d-lg-none{% endif %}">
+										{% include 'tease.twig' %}
+									</div>
+								{% endfor %}
+							</div>
+							
 						</div>
-						
-					</div>
-				</section>
-			{% endif %}
+					</section>
+				{% endif %}
+			</div>
+			
+			{% endfor %}
 		</div>
-		
-		{% endfor %}
-	</div>
 	{% endif %}
 	
 </section>

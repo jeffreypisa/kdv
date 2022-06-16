@@ -27,5 +27,10 @@ $args = array(
 );
     
 $context['posts'] = Timber::get_posts($args);
+  
+/* Load categories */
+
+$terms = \Timber::get_terms(array('taxonomy' => 'artikelen_themas', 'hide_empty' => true, 'parent' => 0));
+$context['categories'] = $terms;
 
 Timber::render( array( 'archive-themas.twig' ), $context );
