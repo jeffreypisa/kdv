@@ -1,0 +1,53 @@
+<section id="section{{ sectionno }}" class="mod-tijdlijn {% if sectionno == 1 %}logospacer{% endif %} {{ item.achtergrond }}">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10 offset-md-1 col-xl-8 offset-xl-2 text-center">
+				{% if item.titel %}
+					<h2 class="mb-5"> {{ item.titel }} </h2>
+				{% endif %}
+				{% if item.tekst %}
+					{{ item.tekst }}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+		{% if item.onderdeel %}
+			<div class="container-fluid container-lg">
+				<div class="onderdelen">
+					<div class="theline"></div>
+					<div class="row">
+						<div class="col-md-10 offset-md-1">
+							{% for onderdeel in item.onderdeel %}
+								<div class="onderdeel anime-fadein">
+									<div class="row">
+										<div class="offset-1 col-10 col-md-5 offset-md-0 order-last text-center {% if loop.index is odd %}order-md-first text-md-end{% else %}order-md-last text-md-start{% endif %}">
+											{% if onderdeel.subtitel %}
+												<h6 class="sub mb-2"> {{ onderdeel.subtitel }} </h6>
+											{% endif %}
+											{% if onderdeel.titel %}
+												<h3 class="text-green mb-2"> {{ onderdeel.titel }} </h3>
+											{% endif %}
+											{% if onderdeel.tekst %}
+												{{ onderdeel.tekst }}
+											{% endif %}
+										</div>
+										<div class="col-2 text-md-center order-first order-md-2 {% if loop.index is even %}order-md-2{% endif %}">
+											<div class="dot d-inline-block">
+												{{ loop.index }}
+											</div>
+										</div>
+										<div class="col-6 offset-1 col-sm-6 offset-sm-1 col-md-4 offset-md-1 order-first  {% if loop.index is odd %}order-md-last text-md-left{% else %}order-md-first{% endif %}">
+											<div class="image-holder mb-4 mb-md-0 {% if item.afbeelding_rond %} ratio-1x1 image-rounded{% else %} {{ item.afbeelding_ratio }}{% endif %}">
+												<div class="image" style="background-image: url({{ Image(onderdeel.afbeelding).src }})"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							{% endfor %}
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+	</div>
+</section>

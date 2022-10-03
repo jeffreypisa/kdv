@@ -7,12 +7,20 @@
       "uuidString" : "DAB3A1D1-B069-47CF-B5B7-C2F91B29D8B3"
     }
   ],
-  "creatorBuild" : "34365",
+  "creatorBuild" : "34434",
   "files" : {
     "\/.nova\/Publishing\/Emonks.json" : {
       "ft" : 524288,
       "oA" : 1,
       "oAP" : "\/.nova\/Publishing\/Emonks-min.json",
+      "oF" : 0,
+      "oO" : 1,
+      "oS" : 1
+    },
+    "\/.nova\/Publishing\/Siteground.json" : {
+      "ft" : 524288,
+      "oA" : 1,
+      "oAP" : "\/.nova\/Publishing\/Siteground-min.json",
       "oF" : 0,
       "oO" : 1,
       "oS" : 1
@@ -522,7 +530,7 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
-    "\/assets\/img\/Union.svg" : {
+    "\/assets\/img\/union.svg" : {
       "ft" : 2097152,
       "miP" : 0,
       "oA" : 2,
@@ -1105,6 +1113,21 @@
       "ma" : 1,
       "oA" : 1,
       "oAP" : "\/assets\/scss\/pagebuilder\/_themas.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/assets\/scss\/pagebuilder\/_tijdlijn.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/assets\/scss\/pagebuilder\/_tijdlijn.css",
       "oF" : 0,
       "oS" : 3,
       "pg" : 0,
@@ -1861,6 +1884,14 @@
       "hM" : 0,
       "oA" : 0,
       "oAP" : "\/templates\/pagebuilder\/themas.twig",
+      "oF" : 0
+    },
+    "\/templates\/pagebuilder\/tijdlijn.twig" : {
+      "cB" : 0,
+      "ft" : 8192,
+      "hM" : 0,
+      "oA" : 0,
+      "oAP" : "\/templates\/pagebuilder\/tijdlijn.twig",
       "oF" : 0
     },
     "\/templates\/pagebuilder\/videos.twig" : {
@@ -2678,7 +2709,8 @@
         "active" : 1
       },
       "no-fallthrough" : {
-        "active" : 1
+        "active" : 1,
+        "optionString" : "{'allowEmptyCase': false}"
       },
       "no-floating-decimal" : {
         "active" : 0
@@ -2840,7 +2872,8 @@
         "optionString" : "'event', 'fdescribe'"
       },
       "no-restricted-imports" : {
-        "active" : 0
+        "active" : 0,
+        "optionString" : ""
       },
       "no-restricted-properties" : {
         "active" : 0,
@@ -3468,6 +3501,7 @@
       "createDeclarationFile" : 0,
       "jsxMode" : 0,
       "minifierStyle" : 0,
+      "moduleDetectionType" : 0,
       "moduleResolutionType" : 0,
       "moduleType" : 2,
       "removeComments" : 0,
