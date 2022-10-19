@@ -596,7 +596,7 @@
                             "key": "field_633ad00c01885",
                             "label": "Tekst",
                             "name": "tekst",
-                            "type": "textarea",
+                            "type": "wysiwyg",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -606,66 +606,10 @@
                                 "id": ""
                             },
                             "default_value": "",
-                            "placeholder": "",
-                            "maxlength": "",
-                            "rows": "",
-                            "new_lines": ""
-                        },
-                        {
-                            "key": "field_633ad0a301897",
-                            "label": "Afbeeldingen rond maken",
-                            "name": "afbeelding_rond",
-                            "type": "true_false",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "",
-                            "default_value": 0,
-                            "ui": 0,
-                            "ui_on_text": "",
-                            "ui_off_text": ""
-                        },
-                        {
-                            "key": "field_633adb9040e4f",
-                            "label": "Afbeeldingen ratio",
-                            "name": "afbeelding_ratio",
-                            "type": "select",
-                            "instructions": "Verhouding afsnijden",
-                            "required": 0,
-                            "conditional_logic": [
-                                [
-                                    {
-                                        "field": "field_633ad0a301897",
-                                        "operator": "!=",
-                                        "value": "1"
-                                    }
-                                ]
-                            ],
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "choices": {
-                                "ratio-1x1": "Vierkant",
-                                "ratio-3x2": "3x2",
-                                "ratio-2x3": "2x3",
-                                "ratio-4x3": "4x3",
-                                "ratio-3x4": "3x4",
-                                "ratio-16x9": "16x9"
-                            },
-                            "default_value": false,
-                            "allow_null": 0,
-                            "multiple": 0,
-                            "ui": 0,
-                            "return_format": "value",
-                            "ajax": 0,
-                            "placeholder": ""
+                            "tabs": "all",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
                         },
                         {
                             "key": "field_633ad00c01886",
@@ -742,6 +686,60 @@
                                     "toolbar": "full",
                                     "media_upload": 1,
                                     "delay": 0
+                                },
+                                {
+                                    "key": "field_633ad0a301897",
+                                    "label": "Afbeeldingen rond maken",
+                                    "name": "afbeelding_rond",
+                                    "type": "true_false",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "message": "",
+                                    "default_value": 0,
+                                    "ui": 0,
+                                    "ui_on_text": "",
+                                    "ui_off_text": ""
+                                },
+                                {
+                                    "key": "field_633adb9040e4f",
+                                    "label": "Afbeelding ratio",
+                                    "name": "afbeelding_ratio",
+                                    "type": "select",
+                                    "instructions": "Verhouding afsnijden",
+                                    "required": 0,
+                                    "conditional_logic": [
+                                        [
+                                            {
+                                                "field": "field_633ad0a301897",
+                                                "operator": "!=",
+                                                "value": "1"
+                                            }
+                                        ]
+                                    ],
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "choices": {
+                                        "ratio-1x1": "Vierkant",
+                                        "ratio-3x2": "3x2",
+                                        "ratio-4x3": "4x3",
+                                        "ratio-16x9": "16x9"
+                                    },
+                                    "default_value": false,
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "ui": 0,
+                                    "return_format": "value",
+                                    "ajax": 0,
+                                    "placeholder": ""
                                 },
                                 {
                                     "key": "field_633ad09101896",
@@ -1368,5 +1366,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1664808283
+    "modified": 1666193364
 }

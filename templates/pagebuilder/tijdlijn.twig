@@ -12,7 +12,7 @@
 		</div>
 	</div>
 		{% if item.onderdeel %}
-			<div class="container-fluid container-lg">
+			<div class="containerlg">
 				<div class="onderdelen">
 					<div class="theline"></div>
 					<div class="row">
@@ -36,8 +36,8 @@
 												{{ loop.index }}
 											</div>
 										</div>
-										<div class="col-6 offset-1 col-sm-6 offset-sm-1 col-md-4 offset-md-1 order-first  {% if loop.index is odd %}order-md-last text-md-left{% else %}order-md-first{% endif %}">
-											<div class="image-holder mb-4 mb-md-0 {% if item.afbeelding_rond %} ratio-1x1 image-rounded{% else %} {{ item.afbeelding_ratio }}{% endif %}">
+										<div class="col-6 offset-1 col-sm-6 offset-sm-1 col-md-4 order-first  {% if loop.index is odd %}order-md-last text-md-left offset-md-0{% else %}order-md-first offset-md-1{% endif %}">
+											<div class="image-holder mb-4 mb-md-0 {% if onderdeel.afbeelding_rond %} ratio-1x1 image-rounded{% else %} {{ onderdeel.afbeelding_ratio }}{% endif %} {% if loop.index is even %}float-md-end{% endif %}">
 												<div class="image" style="background-image: url({{ Image(onderdeel.afbeelding).src }})"></div>
 											</div>
 										</div>

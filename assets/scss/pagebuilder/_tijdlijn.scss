@@ -46,7 +46,7 @@
 		.theline {
 			content: '';
 			position: absolute;
-			left: 10px;
+			left: 20px;
 			top: 0;
 			bottom: 0;
 			width: 1px;
@@ -54,7 +54,7 @@
 			z-index: 0;
 		}
 		.onderdeel {
-			padding-top: 80px;
+			padding-top: 100px;
 			padding-bottom: 40px;
 			position: relative;
 			.dot {
@@ -70,6 +70,7 @@
 				text-align: center;
 				z-index: 1;
 				position: relative;
+				margin-left: 10px;
 				&:after {
 					content: '';
 					position: absolute;
@@ -94,9 +95,19 @@
 				z-index: 2;
 				margin-top: calc(-50% + 18px);
 				overflow: hidden;
+				width: 100%;
 				&.image-rounded {
 					border-radius: 999px;
 					overflow: hidden;
+				}
+				&.ratio-3x2 {
+					margin-top: -29%;
+				}
+				&.ratio-4x3 {
+					margin-top: -33%;
+				}
+				&.ratio-16x9 {
+					margin-top: -22%;
 				}
 				.image {
 					position: absolute;
@@ -154,6 +165,15 @@
 				}
 				.image-holder {
 					margin-top: calc(-50% + 36px);
+					&.ratio-3x2 {
+						margin-top: -17%;
+					}
+					&.ratio-4x3 {
+						margin-top: -23%;
+					}
+					&.ratio-16x9 {
+						margin-top: -12%;
+					}
 				}
 				.dot {
 					width: 68px;
@@ -161,6 +181,7 @@
 					line-height: 68px;
 					font-size: 36px;
 					transform: translateX(-1px);
+					margin: 0;
 					&:after {
 						width: 300px;
 					}
@@ -172,10 +193,28 @@
 
 @include media-breakpoint-up(lg) {
 	.mod-tijdlijn {
+		.containerlg {
+			width: 100%;
+			padding-right: var(--bs-gutter-x, 2rem);
+			padding-left: var(--bs-gutter-x, 2rem);
+			margin-right: auto;
+			margin-left: auto;
+		}
 		.onderdelen {
 			margin-top: 80px;
 			.onderdeel {
 				padding-top: 160px;
+				.image-holder {
+					&.ratio-3x2 {
+						margin-top: -21%;
+					}
+					&.ratio-4x3 {
+						margin-top: -26%;
+					}
+					&.ratio-16x9 {
+						margin-top: -15%;
+					}
+				}
 			}
 		}
 	}
@@ -187,6 +226,48 @@
 			margin-top: 100px;
 			.onderdeel {
 				padding-top: 200px;
+				.image-holder {
+					&.ratio-3x2 {
+						margin-top: -25%;
+					}
+					&.ratio-4x3 {
+						margin-top: -28%;
+					}
+					&.ratio-16x9 {
+						margin-top: -19%;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(xxl) {
+	.mod-tijdlijn {
+		.onderdelen {
+			.onderdeel {
+				margin-bottom: 60px;
+				.image-holder {
+					width: 400px;
+					padding: 0;
+					&.image-rounded, 
+					&.ratio-1x1 {
+						margin-top: -165px;
+						height: 400px;
+					}
+					&.ratio-3x2 {
+						margin-top: -101px;
+						height: 267px;
+					}
+					&.ratio-4x3 {
+						margin-top: -120px;
+						height: 300px;
+					}
+					&.ratio-16x9 {
+						margin-top: -79px;
+						height: 225px;
+					}
+				}
 			}
 		}
 	}
