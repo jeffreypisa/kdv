@@ -7,7 +7,7 @@
       "uuidString" : "DAB3A1D1-B069-47CF-B5B7-C2F91B29D8B3"
     }
   ],
-  "creatorBuild" : "34513",
+  "creatorBuild" : "34518",
   "files" : {
     "\/.nova\/Publishing\/Emonks.json" : {
       "ft" : 524288,
@@ -500,6 +500,26 @@
       "pg" : 0,
       "sct" : 0
     },
+    "\/assets\/img\/aanmelden_knop.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/img\/aanmelden_knop.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/assets\/img\/close.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/img\/close.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
     "\/assets\/img\/corner_rounded_top_left.svg" : {
       "ft" : 2097152,
       "miP" : 0,
@@ -530,11 +550,31 @@
       "plM" : 52780316221407,
       "prP" : 0
     },
+    "\/assets\/img\/lijn.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/img\/lijn.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
     "\/assets\/img\/logo_kdv.svg" : {
       "ft" : 2097152,
       "miP" : 0,
       "oA" : 2,
       "oAP" : "\/assets\/img\/logo_kdv.svg",
+      "oF" : 0,
+      "opt" : 0,
+      "plM" : 52780316221407,
+      "prP" : 0
+    },
+    "\/assets\/img\/play.svg" : {
+      "ft" : 2097152,
+      "miP" : 0,
+      "oA" : 2,
+      "oAP" : "\/assets\/img\/play.svg",
       "oF" : 0,
       "opt" : 0,
       "plM" : 52780316221407,
@@ -819,6 +859,21 @@
       "oAP" : "\/assets\/lottie\/composition.lottie",
       "oF" : 0
     },
+    "\/assets\/scss\/components\/_aanmeldenactie.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/assets\/scss\/components\/_aanmeldenactie.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
     "\/assets\/scss\/components\/_accordion.scss" : {
       "aP" : 1,
       "bl" : 0,
@@ -1084,6 +1139,21 @@
       "ma" : 1,
       "oA" : 1,
       "oAP" : "\/assets\/scss\/components\/_mobilemenu.css",
+      "oF" : 0,
+      "oS" : 3,
+      "pg" : 0,
+      "sct" : 0
+    },
+    "\/assets\/scss\/components\/_modal.scss" : {
+      "aP" : 1,
+      "bl" : 0,
+      "co" : 0,
+      "dP" : 10,
+      "ec" : 1,
+      "ft" : 4,
+      "ma" : 1,
+      "oA" : 1,
+      "oAP" : "\/assets\/scss\/components\/_modal.css",
       "oF" : 0,
       "oS" : 3,
       "pg" : 0,

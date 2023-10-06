@@ -2,6 +2,27 @@
 
 {% block content %}
 	<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
+		{% if post.aanmelden_of_meer_weten_actieknop %}
+			<!-- Button trigger modal -->
+			<button type="button" class="aanmeldenactieknop" data-bs-toggle="modal" data-bs-target="#exampleModal">
+			  <img src="{{ theme.link }}/assets/img/aanmelden_knop.svg" alt="aanmeldenactie">
+			</button>
+			
+			<!-- Modal -->
+			<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog">
+				<div class="modal-content text-white">
+				  <div class="modal-header">
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><img src="{{ theme.link }}/assets/img/close.svg"></button>
+				  </div>
+				  <div class="modal-body">
+					<h3> {{ options.aanmelden_titel }}</h3>
+					<p> {{ options.aanmelden_tekst }}</p>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		{% endif %}
 		{% include 'pagebuilder.twig' %}
 	</article>
 {% endblock %}

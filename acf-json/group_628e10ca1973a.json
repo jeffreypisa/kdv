@@ -6,6 +6,7 @@
             "key": "field_628e10cee2be2",
             "label": "Footer heeft witte achtergrond",
             "name": "footer_heeft_witte_achtergrond",
+            "aria-label": "",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -17,9 +18,29 @@
             },
             "message": "",
             "default_value": 0,
-            "ui": 0,
             "ui_on_text": "",
-            "ui_off_text": ""
+            "ui_off_text": "",
+            "ui": 1
+        },
+        {
+            "key": "field_65200abc7530e",
+            "label": "Aanmelden of meer weten actieknop",
+            "name": "aanmelden_of_meer_weten_actieknop",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "ui": 1
         }
     ],
     "location": [
@@ -40,5 +61,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1653477691
+    "modified": 1696598748
 }

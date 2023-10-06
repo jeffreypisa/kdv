@@ -13,7 +13,7 @@
 	
 	<div class="container">
 		{% if item.titel %}
-			<h2 class="mb-5 d-block text-center"> {{ item.titel }} </h2>
+			<h2 class="mb-4 mb-md-5 d-block text-center"> {{ item.titel }} </h2>
 		{% endif %}
 		<div class="slick-slider">
 			{% for ref in item.referenties %}
@@ -44,6 +44,13 @@
 					</div>
 				</div>
 			{% endfor %}
+		</div>
+		
+		<div class="text-center d-lg-none">
+			<br>
+			<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+				Ik wil meedoen
+			</button>
 		</div>
 	</div>
 </section>

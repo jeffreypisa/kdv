@@ -1,0 +1,20 @@
+.aanmeldenactieknop {
+	position: fixed;
+	right: -10px;
+	top: 50%;
+	transform: translateY(-50%) scale(1.0);
+	transition: .2s $ease;
+	z-index: 9;
+	display: none;
+	border: 0;
+	background: transparent;
+	&:hover {
+		transform: translateY(-50%) scale(1.1);
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.aanmeldenactieknop {
+		display: block;	
+	}
+}

@@ -28,6 +28,18 @@
 	.content {
 		z-index: 1;
 	}
+	.playvideo {
+		display: block;
+		transform: scale(1.0);
+		transition: .2s $ease;
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+	img {
+		height: 100px;
+		width: 100px;
+	}
 }
 
 @include media-breakpoint-up(md) {
@@ -39,6 +51,10 @@
 		&.xl {
 			min-height: 600px;
 		}
+		img {
+			height: 120px;
+			width: 120px;
+		}
 	}
 }
 
@@ -49,6 +65,10 @@
 		&.xl {
 			min-height: 800px;
 		}
+		img {
+			height: 140px;
+			width: 140px;
+		}
 	}
 }
 
@@ -57,6 +77,10 @@
 		height: 800px;
 		&.xl {
 			height: 1000px;
+		}
+		img {
+			height: 160px;
+			width: 160px;
 		}
 	}
 }

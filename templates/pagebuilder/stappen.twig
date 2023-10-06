@@ -33,7 +33,7 @@
 						{% for dot in item.dots %}
 							<div class="dot{{ loop.index }}">
 								<div class="d-md-none">
-									<img src="{{ theme.link }}/assets/img/stappen_icon_{{ loop.index }}.svg" class="m-auto" alt="stap">
+									<img src="{{ theme.link }}/assets/img/stappen_icon_{{ loop.index }}.svg" class="m-auto mb-4" alt="stap">
 								</div>
 								<div class="row g-2">
 									<div class="col-auto {% if loop.index == 3 %}order-lg-last{% endif %} d-none d-lg-block">
@@ -44,6 +44,7 @@
 										{{ dot.tekst }}
 									</div>
 								</div>
+								<img src="{{ theme.link }}/assets/img/lijn.svg" alt="lijn" class="mb-3 d-lg-none">
 							</div>
 						{% endfor %}
 					{% endif %}
@@ -59,28 +60,30 @@
 			<div class="col-xl-4">
 				<div class="card bg-lilalight mb-30">
 					<div class="card-body">
-						<h3 class="d-block text-center mt-2"> {{ item.coaches_titel }}</h3>
+						<h3 class="d-block text-center mt-3 mb-2"> {{ item.coaches_titel }}</h3>
 						<div class="p-4">
 							<div class="slick-slider-coaches">
 								{% for coach in item.coaches %}
 									<div class="coach-block">
-										{% if coach.afbeelding %}
-											<div class="image" style="background-image: url('{{ Image(coach.afbeelding).src }}');"></div>
-										{% endif %}
-										{% if coach.naam %}
-											<h4 class="text-white d-block text-center mb-4">{{ coach.naam }}</h4>
-										{% endif %}
-										<div class="text-dark">
-										{% if coach.tekst %}
-											{{ coach.tekst }}
-										{% endif %}
-										</div>
-										<div class="text-greendark">
-											<strong>
-											{% if coach.contact %}
-												{{ coach.contact }}
+										<div class="m-auto" style="max-width: 400px">
+											{% if coach.afbeelding %}
+												<div class="image" style="background-image: url('{{ Image(coach.afbeelding).src }}');"></div>
 											{% endif %}
-											</strong>
+											{% if coach.naam %}
+												<h4 class="text-white d-block text-center mb-4">{{ coach.naam }}</h4>
+											{% endif %}
+											<div class="text-dark">
+											{% if coach.tekst %}
+												{{ coach.tekst }}
+											{% endif %}
+											</div>
+											<div class="text-greendark">
+												<strong>
+												{% if coach.contact %}
+													{{ coach.contact }}
+												{% endif %}
+												</strong>
+											</div>
 										</div>
 									</div>
 								{% endfor %}

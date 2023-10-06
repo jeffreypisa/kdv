@@ -5,7 +5,6 @@
 	</div>
 	<div class="content w-100">
 		<div class="container">
-			
 			{% if item.xl %}
 				<div class="row">
 					<div class="col-lg-10">
@@ -41,8 +40,8 @@
 					<br>
 					{% set videoSrc = item.vimeo|split("src=") %}
 					{% set videoUrl = videoSrc[1]|split('"') %}
-					<a href="{{ videoUrl[1] }}" data-lity>
-						<i class="fas fa-play-circle"></i>
+					<a class="playvideo" href="{{ videoUrl[1] }}" data-lity>
+						<img src="{{ theme.link }}/assets/img/play.svg">
 					</a>
 				</div>
 			{% endif %}

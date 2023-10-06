@@ -1,0 +1,36 @@
+.modal {
+	.modal-dialog {
+		height: 100vh;
+		max-width: 100%;
+		margin: 0;
+		padding: 0;
+		.modal-content {
+			max-width: 500px;
+			border: 0;
+			top: 50%;
+			left: 50%;
+			transform: translateY(-50%) translateX(-50%);
+			border-radius: 40px;
+			background: linear-gradient(153deg, #99C555 13.45%, #2E7040 87.85%);
+			.modal-header {
+				border: 0;
+				.btn-close {
+					background: none;
+					padding: 0;
+					margin-right: 10px;
+					margin-top: 5px;
+				}
+			}
+			.modal-body {
+				padding: 0 30px 30px;
+				input[type=submit] {
+					height: 46px;
+					margin: 0 auto;
+				}
+			}
+			.modal-footer {
+				border: 0;
+			}
+		}
+	}
+}
