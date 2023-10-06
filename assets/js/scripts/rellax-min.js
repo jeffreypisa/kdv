@@ -1,1 +1,0 @@
-import Rellax from"rellax";export function rellax(){new Rellax(".rellax",{speed:-2,center:!1,wrapper:null,round:!0,vertical:!0,horizontal:!1})}

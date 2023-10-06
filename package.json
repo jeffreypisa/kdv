@@ -12,6 +12,7 @@
     "in-view": "^0.6.1",
     "jquery": "^3.6.0",
     "lity": "^2.4.1",
+    "lottie-web": "^5.12.2",
     "matchheight": "^0.1.2",
     "rellax": "^1.12.1",
     "slick-carousel": "^1.8.1"

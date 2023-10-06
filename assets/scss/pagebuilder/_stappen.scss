@@ -1,0 +1,93 @@
+.strook-stappen {
+	.stappenpad {
+		> div {
+			text-align: center;
+		}
+	}
+	.tekst-onder-stappen {
+		max-width: 500px;
+		margin: 0 auto;
+	}
+	.card {
+		.image {
+			width: 200px;
+			height: 200px;
+			margin: 0 auto 20px;
+			max-width: 100%;
+			border-radius: 50%;
+			background-size: cover;
+			background-position: center;
+		}
+	}
+	.slick-slider-coaches {
+		.slick-prev {
+			left: -30px;
+		}
+		.slick-next {
+			right: -30px;
+		}
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.strook-stappen {
+		.tekst-onder-stappen {
+			transform: translateX(88px);
+		}
+		.stappenpad {
+			position: relative;
+			margin-right: 30px;
+			> div {
+				position: absolute;
+				width: 300px;
+				text-align: left;
+				h4 {
+					padding-top: 10px;
+					color: $dark;
+				}
+			}
+			.dot1 {
+				top: 0%;
+				left: 14%;
+				width: 250px;
+			}
+			.dot2 {
+				top: 8%;
+				right: 18%;
+				width: 260px;
+			}
+			.dot3 {
+				top: 29%;
+				right: 24%;
+				width: 310px;
+				text-align: right;
+			}
+			.dot4 {
+				top: 49%;
+				left: 36%;
+				width: 320px;
+			}
+			.dot5 {
+				top: 71%;
+				left: 66%;
+				width: 240px;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	.strook-stappen {
+		.tekst-onder-stappen {
+			transform: translateX(58px);
+		}
+	}
+}
+
+@include media-breakpoint-up(xxl) {
+	.strook-stappen {
+		.tekst-onder-stappen {
+			transform: translateX(78px);
+		}
+	}
+}

@@ -25,6 +25,18 @@
 	{% elseif item.acf_fc_layout == 'videos' %}
 		{% include 'pagebuilder/videos.twig' %}
 	
+	{% elseif item.acf_fc_layout == 'slimboerenisgoedboeren' %}
+		{% include 'pagebuilder/slimboerenisgoedboeren.twig' %}
+	
+	{% elseif item.acf_fc_layout == 'veelgestelde_vragen' %}
+		{% include 'pagebuilder/veelgestelde_vragen.twig' %}
+	
+	{% elseif item.acf_fc_layout == 'stappen' %}
+		{% include 'pagebuilder/stappen.twig' %}
+	
+	{% elseif item.acf_fc_layout == 'referenties' %}
+		{% include 'pagebuilder/referenties.twig' %}
+		
 	{% endif %}
   
 {% endfor %}

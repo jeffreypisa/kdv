@@ -23,6 +23,7 @@
 		background-size: contain;
 		background-color: transparent;
 		color: $greylight;
+		text-indent: -9999px;
 		&:after {
 			position: absolute;
 			top: 0;
@@ -32,6 +33,7 @@
 			font-family: "Font Awesome 5"; 
 			font-weight: 900; 
 			color: $greendark;
+			text-indent: 0;
 		}
 		&.slick-prev {
 			left: 10px;

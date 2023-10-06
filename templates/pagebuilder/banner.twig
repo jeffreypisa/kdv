@@ -36,6 +36,16 @@
 					</div>
 				</div>
 			{% endif %}
+			{% if item.vimeo %}
+				<div class="text-center">
+					<br>
+					{% set videoSrc = item.vimeo|split("src=") %}
+					{% set videoUrl = videoSrc[1]|split('"') %}
+					<a href="{{ videoUrl[1] }}" data-lity>
+						<i class="fas fa-play-circle"></i>
+					</a>
+				</div>
+			{% endif %}
 		</div>
 	</div>
 </section> 

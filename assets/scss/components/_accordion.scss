@@ -1,0 +1,39 @@
+.accordion {
+	.accordion-item {
+		border: 0;
+		&:first-child {
+			.accordion-header {
+				border: 0;
+			}
+		}
+		.accordion-header {
+			border-top: 1px solid $grey;
+			color: $dark;
+			.accordion-button {
+				border: 0;	
+				padding-left: 0;
+				padding-right: 0;
+				color: $dark;
+				img {
+					transform: rotate(0);
+					transition: .2s $ease;
+				}
+				&:after {
+					display: none;
+				}
+				&:not(.collapsed) {
+					border: 0;
+					box-shadow: none;
+					background: transparent;
+					color: $dark;
+					img {
+						transform: rotate(45deg);
+					}
+				}
+			}
+		}
+		.accordion-body {
+			padding-left: 0;
+		}
+	}
+}

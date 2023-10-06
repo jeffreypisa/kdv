@@ -17,4 +17,31 @@ export function slick_init() {
 		cssEase: 'cubic-bezier(.19,1,.22,1)'
 	});
 	
+	$('.slick-slider').slick({
+		slidesToShow: 3,
+		responsive: [
+			{
+				breakpoint: 1024,
+				settings: {
+					slidesToShow: 2
+				}
+			},
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 1
+				}
+			}
+		]
+	});
+	
+	$('.slick-slider-coaches').slick({
+		slidesToShow: 1
+	});
+	
+	// FAQ interaction
+	$('.faq-question').click(function() {
+		$(this).siblings('.faq-answer').slideToggle();
+		$(this).find('i').toggleClass('fa-plus fa-minus');
+	});
 }

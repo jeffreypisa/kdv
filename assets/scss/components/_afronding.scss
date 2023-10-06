@@ -1,0 +1,19 @@
+.corner-rounded-top-left,
+.corner-rounded-bottom-left {
+	display: none;
+}
+
+@include media-breakpoint-up(md) {
+	.corner-rounded-top-left {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+	.corner-rounded-bottom-left {
+		position: absolute;
+		display: block;
+		bottom: 0;
+		left: 0;
+	}
+}

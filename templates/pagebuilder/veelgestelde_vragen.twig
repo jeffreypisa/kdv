@@ -1,0 +1,46 @@
+<section class="strook-veelgestelde_vragen">
+	{% if item.kleur_afronding_links_boven %}
+		<svg class="corner-rounded-top-left" width="154" height="156" viewBox="0 0 154 156" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<path d="M-2.12696 155.541L-2.12695 0L153.414 6.79891e-06C67.5111 3.04397e-06 -2.12696 69.638 -2.12696 155.541Z" fill="{{ item.kleur_afronding_links_boven }}"/>
+		</svg>
+	{% endif %}
+	
+	{% if item.kleur_afronding_links_onder %}
+		<svg class="corner-rounded-bottom-left" width="156" height="156" viewBox="0 0 156 156" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path d="M-0.0781318 0.084137L-0.078125 155.625L155.463 155.625C69.5599 155.625 -0.078128 85.987 -0.0781318 0.084137Z" fill="{{ item.kleur_afronding_links_onder }}"/>
+		</svg>
+	{% endif %}
+	
+	<div class="container">
+		{% if item.titel %}
+			<h2 class="mb-5 d-block text-center"> {{ item.titel }} </h2>
+		{% endif %}
+		<div class="row">
+			<div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+				<div class="accordion" id="faqAccordion">
+					{% for vraag in item.vragen %}
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="heading{{ loop.index }}">
+								<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ loop.index }}" aria-expanded="true" aria-controls="collapse{{ loop.index }}">
+									<div class="row g-0 w-100">
+										<div class="col" style="font-size: 19px;">
+											{{ vraag.vraag }}
+										</div>
+										<div class="col-auto">
+											<img src="{{ theme.link }}/assets/img/plus.svg" alt="plus">
+										</div>
+									</div>
+								</button>
+							</h2>
+							<div id="collapse{{ loop.index }}" class="accordion-collapse collapse" aria-labelledby="heading{{ loop.index }}" data-bs-parent="#faqAccordion">
+								<div class="accordion-body">
+									{{ vraag.antwoord }}
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

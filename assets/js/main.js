@@ -3,10 +3,11 @@ import bootstrap from 'bootstrap/dist/js/bootstrap.bundle';
 
 // Init plugins
 import { slick_init } from './scripts/slick.js';
-import { matchheight_init } from './scripts/matchheight.js';
+import { matchheight_init } from './scripts/matchheight_init.js';
 import { animejs } from './scripts/anime.js';
-import { lity_init } from './scripts/lity.js';
-import { rellax } from './scripts/rellax.js';
+import { lity_init } from './scripts/lity_init.js';
+import { rellax_init } from './scripts/rellax_init.js';
+import { lottie_init } from './scripts/lottie_init.js';
 
 // Scripts
 import { site_is_loaded } from './scripts/site_is_loaded.js';
@@ -19,7 +20,8 @@ import { ubncheck } from './scripts/ubncheck.js';
 
 
 lity_init();
-rellax();
+rellax_init();
+lottie_init();
 
 $( document ).ready(function() {
 	footer_down();

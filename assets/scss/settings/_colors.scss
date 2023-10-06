@@ -11,6 +11,8 @@ $blue:       #28ADD8;
 $yellow:     #FFCA4D;
 $pink:       #F9BAD8;
 $grey:      #DADADA;
+$lilalight:       #BBB8D9;
+$yellowlight:      #FFF9EB;
 
 // Create your own map
 $custom-colors: (
@@ -29,7 +31,9 @@ $custom-colors: (
   "blue":           $blue,
   "yellow":         $yellow,
   "pink":           $pink,
-  "grey":           $grey
+  "grey":           $grey,
+  "lilalight":      $lilalight,
+  "yellowlight":    $yellowlight
 );
 
 // Merge the maps
@@ -51,7 +55,9 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 }
 .bg-white,
 .bg-greylight,
-.bg-greenlightest {
+.bg-greenlightest,
+.bg-lilalight,
+.bg-yellowlight {
   color: $dark;
 }
 
