@@ -78,6 +78,17 @@
 										</div>
 									</div>
 								{% endif %}
+								{% if kolom.publicaties %}
+									<div class="js-slick-sliderblok publicaties">
+										{% for slide in kolom.publicaties %}
+											<div class="item text-center">
+												{% if slide.tekst %}
+													{{ slide.tekst }}
+												{% endif %}
+											</div>
+										{% endfor %}
+									</div>
+								{% endif %}
 							</div>
 							{% if kolom.link %}
 								<a class="btn btn-primary mb-5" href="{{ kolom.link.url }}" target="{{ kolom.link.target }}">{{ kolom.link.title }}</a>
