@@ -464,7 +464,7 @@
                                             "label": "Tekst",
                                             "name": "tekst",
                                             "aria-label": "",
-                                            "type": "textarea",
+                                            "type": "wysiwyg",
                                             "instructions": "",
                                             "required": 0,
                                             "conditional_logic": 0,
@@ -474,10 +474,10 @@
                                                 "id": ""
                                             },
                                             "default_value": "",
-                                            "placeholder": "",
-                                            "maxlength": "",
-                                            "rows": "",
-                                            "new_lines": "",
+                                            "tabs": "all",
+                                            "toolbar": "full",
+                                            "media_upload": 1,
+                                            "delay": 0,
                                             "parent_repeater": "field_624afd295b3a6"
                                         }
                                     ],
@@ -633,31 +633,6 @@
                             "placeholder": ""
                         },
                         {
-                            "key": "field_651d5f3c3072e",
-                            "label": "Afbeelding",
-                            "name": "afbeelding",
-                            "aria-label": "",
-                            "type": "image",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "array",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": "",
-                            "preview_size": "medium"
-                        },
-                        {
                             "key": "field_651d5ef130727",
                             "label": "Titel",
                             "name": "titel",
@@ -740,22 +715,6 @@
                                     "parent_repeater": "field_651d5f7c30731"
                                 }
                             ]
-                        },
-                        {
-                            "key": "field_651d5ef130729",
-                            "label": "Link",
-                            "name": "link",
-                            "aria-label": "",
-                            "type": "link",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "array"
                         }
                     ],
                     "min": "",
@@ -2218,6 +2177,27 @@
                                     "parent_repeater": "field_651d60c330749"
                                 },
                                 {
+                                    "key": "field_65310b8af0c5d",
+                                    "label": "Functie",
+                                    "name": "functie",
+                                    "aria-label": "",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "maxlength": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "parent_repeater": "field_651d60c330749"
+                                },
+                                {
                                     "key": "field_651d60c33074e",
                                     "label": "Tekst",
                                     "name": "tekst",
@@ -2473,5 +2453,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1696596021
+    "modified": 1701259577
 }

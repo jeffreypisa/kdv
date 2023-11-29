@@ -70,9 +70,14 @@
 												<div class="image" style="background-image: url('{{ Image(coach.afbeelding).src }}');"></div>
 											{% endif %}
 											{% if coach.naam %}
-												<h4 class="text-white d-block text-center mb-4">{{ coach.naam }}</h4>
+												<h4 class="text-white d-block text-center mb-1">{{ coach.naam }}</h4>
 											{% endif %}
-											<div class="text-dark">
+											{% if coach.functie %}
+												<div class="text-white d-block text-center mb-4">
+													{{ coach.functie }}
+												</div>
+											{% endif %}
+											<div class="text-dark mt-4">
 											{% if coach.tekst %}
 												{{ coach.tekst }}
 											{% endif %}
