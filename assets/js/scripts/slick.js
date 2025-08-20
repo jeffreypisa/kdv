@@ -30,11 +30,29 @@ export function slick_init() {
 		fade: true,
 		autoplay: true,
 		swipeToSlide: true,
-		speed: 2000,
+		speed: 400,
 		cssEase: 'cubic-bezier(.19,1,.22,1)'
 	});
 	
-
+	$('.js-slick-centered-slider').slick({
+		centerMode: true,
+		centerPadding: '60px', // Ruimte om de centrale slide
+		slidesToShow: 3, // Hoeveel slides er zichtbaar zijn (1 grote + 2 kleine)
+		arrows: true,
+		dots: false,
+		infinite: true,
+		autoplay: false,
+		speed: 500,
+		responsive: [
+			{
+				breakpoint: 1024,
+				settings: {
+					slidesToShow: 3,
+					centerPadding: '40px'
+				}
+			},
+		]
+	});
 	
 	$('.slick-slider-coaches').slick({
 		slidesToShow: 1

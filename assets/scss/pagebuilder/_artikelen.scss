@@ -9,4 +9,97 @@
 			}
 		}
 	}
+	.js-slick-centered-slider {
+		padding: 60px 0;
+		margin-top: -60px;
+		.slick-list {
+			overflow: visible;
+		}
+		.slide {
+			transition: transform 0.3s ease, opacity 0.3s ease;
+			
+			z-index: 1;
+			position: relative;
+			padding: 50% 0 50%;
+			.img {
+				background: $dark;
+				transition: transform 0.3s ease, opacity 0.3s ease;
+				transform: scale(0.8); // Verklein de zijkanten
+
+				filter: drop-shadow(0px 0px 18.9803px rgba(0, 0, 0, 0.25));
+
+				img {
+					opacity: 0.6; // Maak de zijkanten minder opvallend
+				}
+			}
+			.titel {
+				position: absolute;
+				top: 100%;
+				left: -50px;
+				right: -50px;
+				text-align: center;
+				font-size: 16px;
+				font-weight: 700;
+				opacity: 0;
+				transition: transform 0.3s ease, opacity 0.3s ease;
+				color: $dark;
+			}
+		}
+	
+		.slick-center {
+			z-index: 2;
+			.slide {
+				opacity: 1;
+				z-index: 2;
+				position: relative;
+				.img {
+					transform: scale(1.6); // Vergroot de centrale slide
+					img {
+						opacity: 1;
+					}
+				}
+				.titel {
+					opacity: 1;
+				}
+			}
+		}
+		.slick-arrow {
+			height: 50px;
+		}
+		.slick-prev, .slick-next {
+			z-index: 10; // Zorg ervoor dat pijlen boven slides liggen
+			&:after {
+				color: #fff;
+				font-size: 30px;
+			}
+		}
+	}
+}
+
+.mod-artikelen {
+	.card.bg-yellow {
+		.card-body {
+			position: relative;
+			.btn-link {
+				position: absolute;
+				bottom: 10px;
+				left: 20;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.mod-artikelen {
+		.js-slick-centered-slider {
+			max-height: 400px;
+			.slide {
+				.img {
+					img {
+						max-height: 170px;
+					}
+				}
+			}
+		}
+	}
 }

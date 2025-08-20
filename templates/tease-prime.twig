@@ -1,7 +1,7 @@
 <a href="{{ item.link }}" target="{{ item.link.target}}" class="tease tease-prime tease-{{ item.post_type }} noline">
 	<div class="card" data-mh>
 		<div class="image-holder mb-0 overflow-hidden">
-			<div class="image" style="background-image: url({{ Image(item.thumbnail).src }})"></div>
+			<div class="image" style="background-image: url({{ Image(item.thumbnail).src }}); max-height: 551px;"></div>
 		</div>
 		<div class="card-body d-flex align-items-start flex-column text-white text-lg" data-mh>
 			<h3 class="h4 mb-2">{{ item.title }}</h3>

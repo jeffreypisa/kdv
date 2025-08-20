@@ -10,7 +10,7 @@
 				{% endif %}
 			</div>
 		</div>
-		<div class="d-lg-none mb-4">
+		<div class="d-none mb-4">
 			<div class="row d-flex align-items-center">
 				<div class="col-auto">
 					<div class="form-select-holder">
@@ -37,9 +37,27 @@
 					{% endfor %}
 				{% endif %}
 			</div>
-			<div class="col-md-4 mb-30 d-none d-lg-block">
+			<div class="col-lg-4 mb-30">
 				<div class="card bg-yellow mb-0" data-mh>
-					<div class="card-body">
+					<div class="body p-4">
+						<h3 class="h4 mb-2"> {{ item.slider_titel }}</h3>	
+						<p class="mb-1"> {{ item.slider_tekst }} </p>	
+					</div>
+					{% if item.slider %}
+						<div class="slider-wrapper js-slick-centered-slider">
+							{% for item in item.slider %}
+								<div class="slide">
+									<a href="{{ item.link.url }}" class="publicatie">
+										<div class="img">
+											<img src="{{ Image(item.afbeelding).url }}" alt="{{ Image(item.afbeelding).title }}" class="w-100 h-auto">
+										</div>
+										<div class="titel">{{ item.link.title }}</div>
+									</a>
+								</div>
+							{% endfor %}
+						</div>
+					{% endif %}
+						<!--
 						<h3 class="h4 mb-3"> {{ item.themas_titel }}</h3>				
 						{% for item in themas %}
 							<div class="w-100">
@@ -49,7 +67,7 @@
 						{% if item.bekijk_alle_themas %}
 							<a class="btn-link btn-link-next" href="{{ item.bekijk_alle_themas.url }}" target="{{ item.bekijk_alle_themas.target }}">{{ item.bekijk_alle_themas.title }}</a>
 						{% endif %}	
-					</div>
+						-->
 				</div>
 			</div>
 		</div>

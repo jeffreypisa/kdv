@@ -1,0 +1,54 @@
+<section class="strook-stappen-123 bg-transparent {% if sectionno == '1' %}logospacer{% endif %}">
+	<div class="container text-center mb-5 pb-md-4">
+		<div class="col-md-10 offset-md-1 col-xl-8 offset-xl-2">
+			{% if item.titel %}
+				<h2> {{ item.titel }} </h2>
+			{% endif %}
+			{% if item.tekst %}
+				{{ item.tekst }}
+			{% endif %}
+		</div>
+	</div>
+	<div class="container">
+		{% if item.stappen_kolom_1 or item.stappen_kolom_2 %}
+			<div class="stappen">
+				<div class="row">
+					<div class="col-md-6">
+						{% for stap in item.stappen_kolom_1 %}
+							<div class="stap mb-4">
+								<div class="row g-4">
+									<div class="col-auto">
+										<div class="number">
+											<span class="h4 m-0">{{ stap.nr }}</span>
+										</div>
+									</div>
+									<div class="col">
+										<h4>{{ stap.titel }}</h4>
+										{{ stap.tekst }}
+									</div>
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+					<div class="col-md-6">
+						{% for stap in item.stappen_kolom_2 %}
+							<div class="stap mb-4">
+								<div class="row g-4">
+									<div class="col-auto">
+										<div class="number">
+											<span class="h4 m-0">{{ stap.nr }}</span>
+										</div>
+									</div>
+									<div class="col">
+										<h4>{{ stap.titel }}</h4>
+										{{ stap.tekst }}
+									</div>
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		{% endif %}
+	</div>
+</section>

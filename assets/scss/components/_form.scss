@@ -57,11 +57,15 @@ body .nf-form-content input[type=submit] {
 	height: auto;
 }
 
+body .nf-form-content input[type=submit] {
+	border-radius: 100px !important;
+}
+
 body .nf-form-content .list-select-wrap .nf-field-element>div, 
 body .nf-form-content input:not([type=button]), 
 body .nf-form-content textarea {
 	border-color: $greylight;
-	border-radius: 100px;
+	border-radius: 6px;
 	&::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 		color: #9DC5C3;
 		opacity: 1; /* Firefox */
